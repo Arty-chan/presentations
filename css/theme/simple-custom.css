@@ -65,7 +65,7 @@ body {
 }
 
 /* MEDIA */
-.reveal img, .reveal video, .reveal iframe { max-height: 90%; }
+.reveal img, .reveal video, .reveal iframe { max-height: 700px; }
 
 .reveal .contact h3 { 
   margin-top: 1em;
