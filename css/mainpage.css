@@ -1,0 +1,24 @@
+/**
+ * A simple CSS file for the index.html page by Arty-chan
+ */
+.reveal { font-size: 1em;}
+
+.reveal h1,
+.reveal h2 {
+  text-transform: none;
+  text-align: center;
+  font-size: 3em;
+}
+#main {
+	width: 100%;
+	text-align: center;
+	margin-top: 5em;
+}
+.list {
+	display: inline-block;
+	text-align: left;
+}
+.list li {
+	padding-left: 1em;
+	text-indent: -1em;
+}
