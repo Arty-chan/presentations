@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>We're All Disabled! Part 2 - Cynthia Ng</title>
+
+		<meta name="description" content="Education Institute Webinar January 2015 presentation on creating accessible services through universal design.">
+		<meta name="author" content="Cynthia &quote;Arty&quote; Ng">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple-custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Making Web Services Accessible With Universal Design</h1>
+					<p>
+							<a href="http://about.me/cynthiang">Cynthia Ng</a><br>
+							<a href="http://twitter.com/TheRealArty">@TheRealArty</a><br>
+							January 22, 2015
+					</p>
+					<aside class="notes">
+						<p>Introduction - Hi everyone, hope you’re having a good day.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>What is Web Accessibility?</h2>
+
+						<aside class="notes">
+							<p>We’re here today to talk about accessibility, but what <em>is</em> accessibility?</p>
+							<p>One definition, and what seems to be the most common one is that</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Web accessibility means that people with disabilities can use the Web. <p class="quoted">- W3C Web Accessibility Initiative (WAI)</p></blockquote>
+						<cite>W3C Web Accessibility Initiative. (2005). What is Web Accessibility. <em>Introduction to Web Accessibility</em>. <a href="http://www.w3.org/WAI/intro/accessibility.php"><a href="http://www.w3.org/WAI/intro/accessibility.php">http://www.w3.org/WAI/intro/accessibility.php</a></a></cite>
+
+						<aside class="notes">
+							<p>Having established that, we might look at defining a disability. That’s actually a really hard task, but we can look at the different types of disabilities.</p>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Types of Disabilities</h2>
+						<ul>
+							<li class="fragment">visual</li>
+							<li class="fragment">auditory</li>
+							<li class="fragment">physical/motor</li>
+							<li class="fragment">touch</li>
+							<li class="fragment">learning</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>* visual: other than blindness, this might also refer to people who have difficulty with judging distances and hand-eye coordination</li>
+								<li>* auditory: other than deafness, this might also refer to other hearing issues, such as having difficulty focusing on a single voice</li>
+								<li>* physical/motor: examples include not being able to grip something or problems with precise movements</li>
+								<li>* touch: namely this refers to a lack of sensation with touch</li>
+								<li>* learning: is a rather large umbrella term, but includes dyslexia and other reading disabilities, as well as dysphasia and related issues with writing</li>
+							</ul>>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Why Should You Care?</h2>
+
+						<aside class="notes">
+							<p>People with a disability are a minority, and not all of them need special consideration for web accessibility, right? While that may be true, you might be surprised by some of the facts.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/1in10.png" alt="icon of 10 people, one of which is coloured in">
+						<cite>Statistics Canada. 2013. <em>Statistics Canada on Twitter.</em> <a href="https://twitter.com/StatCan_eng/statuses/407940135729508352">https://twitter.com/StatCan_eng/statuses/407940135729508352</a></cite>
+						<cite>Approximate number based on: World Bank. 2012. <em>Population ages 15-64 (% of total)</em>. <a href="http://data.worldbank.org/indicator/SP.POP.1564.TO.ZS">http://data.worldbank.org/indicator/SP.POP.1564.TO.ZS</a>.</cite>
+
+						<aside class="notes">
+							<p>The last Canadian Survey on Disability by Statistics Canada tell us that 10.1% [approximately 2.4mill] of working-age Canadians (15-64) reported a disability in 2012</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Disability > Minority*</h3>
+						<cite>* Based on 2006 Canadian census <a href="http://www.statcan.gc.ca/tables-tableaux/sum-som/l01/cst01/health71a-eng.htm">percentage of total population ages 15-64 with a disability</a>, and the <a href="http://www.statcan.gc.ca/tables-tableaux/sum-som/l01/cst01/demo50a-eng.htm">percentage of total population ages 15-64 of minorities.</a></cite>
+
+						<aside class="notes">
+							<p>The number of people with a disability is larger than any one group of ethnic or visible minority in this country. That’s a Big Minority.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Policy &amp; Legislation</h3>
+						<p>Federal Departments &amp; Ontario: Web Content Accessibility Guidelines (WCAG)</p>
+
+						<aside class="notes">
+							<p>In Canada, only the federal government departments and the public institutions of Ontario are legislated to meet web accessibility guidelines.</p>
+							<p>However, many organizations or at times, municipalities will also have policies or mandates that have to be followed relating to accessibility. Nevertheless,</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Lack of statutes or federal laws should not exempt [us] from providing equivalent access to all; it should drive [us] toward it. <p class="quoted">- Camilla Fulton</p></blockquote>
+						<cite>Fulton, C. (2011). Web Accessibility, Libraries, and the Law. <em>Information Technology and Libraries.</em>. <a href="http://ejournals.bc.edu/ojs/index.php/ital/article/view/3043/0">http://www.w3.org/WAI/intro/accessibility.php</a></cite>
+
+						<aside class="notes">
+							<p>And, while you might be convinced, but what about others?</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Getting Buy-in</h2>
+
+						<aside class="notes">
+							<p>People frequently ask me how to get buy-in from others, because they might be convinced that we should care about accessibility and do something about it, but too often, accessibility is put aside because it’s too difficult, time consuming, or due to a belief that “accessible websites are ugly.”</p>
+							<p>This last excuse is not true. I mean yes, some accessible websites are ugly, but in the same way that some websites are ugly regardless of the level of accessibility. If anything, the most accessible websites I’ve reviewed have been fairly pleasing to the eye.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/govuk-screenshot.png" alt="gov.uk screenshot">
+
+						<aside class="notes">
+							<p> Just check out <a href="http://gov.uk">gov.uk</a>.</p>
+							<p>To start, maybe we can pull the this-is-what-experts-say card. After all,</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>[It is] well known among web developers that websites that are accessible are also much more usable for everyone. <p class="quoted">- Mohammad Eyadat and Jeff Lew</p></blockquote>
+						<cite>Eyadat, M., &amp; Lew, J. (2011). Web Accessibility Factor a Key Focus for Serving Students. <em>Review of Business Research, 11</em>(2), 80.</cite>
+
+						<aside class="notes">
+							<p>If that’s not enough, there are numerous reasons you can present as benefits for putting into practice the methodologies presented, including that they:</p>
+						</aside>
+					</section>
+					<section>
+						<h2>Benefits</h2>
+						<ul>
+							<li class="fragment">reflect institutional mission, leadership, and values</li>
+							<li class="fragment">serve all users</li>
+							<li class="fragment">make sound fiscal policy</li>
+							<li class="fragment">add value to the institution</li>
+						</ul>
+						<cite class="fragment">Sources: Maler, A. (2013). The Complete Beginner’s Guide to Universal Design. UX Booth<em>. <a href="http://www.uxbooth.com/articles/the-complete-beginners-guide-to-universal-design/">http://www.uxbooth.com/articles/the-complete-beginners-guide-to-universal-design/</a> and Rowland, C., Mariger, H., Siegel, P. M., &amp; Whiting, J. (2010). Universal Design for the Digital Environment: Transforming the Institution. </em>EDUCAUSE Review*, 45(6). <a href="http://www.educause.edu/ero/article/universal-design-digital-environment-transforming-institution">http://www.educause.edu/ero/article/universal-design-digital-environment-transforming-institution</a></cite>
+
+						<aside class="notes">
+							<ul>
+								<li>reflect institutional mission, leadership, and values, - okay assuming your institution has something about equal access</li>
+								<li>serve all users, - not just those with disabilities, and I’ll talk more about this</li>
+								<li>make sound fiscal policy, - since it improves efficiency and reduces costs while maintaining quality, avoids retrofitting, inequitable solutions, litigation; frequently fulfills grant/contract requirements - and</li>
+								<li>add value to the institution. - because you have a better website, it benefits more people (e.g. captions to help people with varying language skills), loads more quickly in browsers, requires less bandwidth, is easier to maintain and update, tends to have a higher return in search engines, and higher compatibility with various software and hardware.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Benefits Simplified</h2>
+						<ul>
+							<li class="fragment">findable</li>
+							<li class="fragment">accessible</li>
+							<li class="fragment">usable</li>
+							<li class="fragment">shareable</li>
+							<li class="fragment">efficient</li>
+							<li class="fragment">collaborative</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Which boils down to your service being more: ...</p>
+							<p>Of course, knowing <em>why</em> doesn’t tell you <em>how</em> to approach accessibility.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Approach to Accessibility</h2>
+
+						<aside class="notes">
+							<p>Whether you want to, or because you’re told to, half the battle seems to simply be figuring out your approach.</p>
+							<p>If, like many others, you see accessibility as something at the end of a checklist, then that’s when you’ll deal with it. However, at least two usability/accessibility experts tell us to:</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Avoid the peanut butter approach. <p class="quoted">- Sarah Horton &amp; Whitney Quesenbery</p></blockquote>
+						<cite>Horton, S. &amp; Quesenbery, W. (2014). A Web for Everyone: Designing Accessible User Experiences. Rosenfeld Media.</cite>
+
+						<aside class="notes">
+							<p>This is actually a reference to Lewis and Rieman, who tell us that:</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>It just won't work to build a complete system and then, in the final stages of development, spread the interface over it like peanut butter.<p class="quoted">- Clayton Lewis &amp; John Rieman</p></blockquote>
+						<cite>Lewis, C. &amp; Rieman, J. (1994). Task-Centered User Interface Design: A Practical Introduction. <a href="http://hcibib.org/tcuid/">http://hcibib.org/tcuid/</a></cite>
+
+						<aside class="notes">
+							<p>Peanut butter is tasty...</p>
+						</aside>
+					</section>
+					<section>
+						<img src="https://farm5.staticflickr.com/4106/5159576009_9a01d16277_b.jpg" alt="squirrel with its head in a peanut butter jar">
+						<cite>shrosa814. (2010). Tale of Squirrel and Peanut Butter. <a href="https://www.flickr.com/photos/shicksba272214/5159576009/">https://www.flickr.com/photos/shicksba272214/5159576009</a> With Permission from Owner.</cite>
+
+						<aside class="notes">
+							<p>but not necessarily a big help in this case.</p>
+							<p>Quesenbery also tells us that:</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Accessibility often gets pigeon-holed as simply making sure there are no barriers to access for screen readers or other assistive technology, <em>without</em> regard to usability.<p class="quoted">- Whitney Quesenbery @whitneyq</p></blockquote>
+						<cite>Quesenbery, W. (2009). Usable Accessibility: Making Web Sites Work Well for People with Disabilities. UX Matters. <a href="http://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php">http://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php</a></cite>
+
+						<aside class="notes">
+							<p>This is a problem, because obviously, your service needs to be both usable and accessible.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Designing for Assistive Technology</h2>
+
+						<aside class="notes">
+							<p>Let’s also take a look at her point on “assistive technology”.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Assistive Technology</h3>
+						<ul>
+							<li class="fragment">screen readers</li>
+							<li class="fragment">text-to-speech</li>
+							<li class="fragment">screen magnifiers</li>
+							<li class="fragment">joysticks</li>
+							<li class="fragment">mobile devices</li>
+							<li class="fragment">keyboards</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Say as part of your approach, you want to make sure your service is accessible to all assistive technology. You start with ‘screen readers’ on your list,  and do some searching and start adding, other ‘text-to-speech’ software, ‘screen magnifiers’, ‘joysticks’, what about ‘mobile devices’ with the added accessibility features? What about ‘keyboards’ for keyboard accessibility?</p>
+							<p>Is there anyone who doesn’t use a keyboard or touch screen regularly?</p>
+							<p>At this point, you might realize that</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>All Technology is Assistive Technology. <p class="quoted">- Sara Hendren @ablerism</p></blockquote>
+						<cite>Hendron, S. (2013). All Technology is Assistive Technology: 6 dispositions for designers on disability. <a href="https://medium.com/thoughtful-design/a8b9a581eb62">https://medium.com/thoughtful-design/a8b9a581eb62</a></cite>
+
+						<aside class="notes">
+							<p>We are not developing for a specific piece of technology, we can’t.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="http://a0.www.animoca.com/v1.0.15/en/wp-content/uploads/2012/05/All-the-Myriad-Androids-Animoca.png" alt="table with over 30 android devices">
+						<cite>animoca. (2012). All the Myriad Androids. <a href="http://www.animoca.com/en/2012/05/all-the-myriad-androids/">http://www.animoca.com/en/2012/05/all-the-myriad-androids/</a> <a href="https://creativecommons.org/licenses/by-nd/3.0/us/">CC-BY-ND 3.0</a></cite>
+
+						<aside class="notes">
+							<p>There are too many potential devices and ways people are using devices to do that. We aren’t even necessarily developing for people, but for potential situations, because conditions including physical or environmental ones can be temporary.</p>
+							<p>So how do you design for accessibility, if that includes all technology?</p>
+							<p>What we need to do is change the way we think about accessibility,</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<blockquote>Move away from the approach of building separately for disabled users, and concern yourself with creating clean, beautiful, usable, and accessible websites. <p class="quoted"> - Debra Riley-Huff</p></blockquote>
+						<cite>Riley-Huff, D. A. (2012). Web Accessibility and Universal Design. <em>Library Technology Reports, 48</em>(7), 29. <a href="http://connection.ebscohost.com/c/articles/83242903/web-accessibility-universal-design">http://connection.ebscohost.com/c/articles/83242903/web-accessibility-universal-design</a></cite>
+
+						<aside class="notes">
+							<p>Accessibility is simply one piece of the puzzle along with standards &amp; best practices, usability, user experience, and more.</p>
+							<p>While not a new idea, Hendren also reminds us that</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>There is no average or normal user. <p class="quoted">- Sara Hendren @ablerism</p></blockquote>
+						<cite>Hendron, S. (2013). All Technology is Assistive Technology: 6 dispositions for designers on disability. <a href="https://medium.com/thoughtful-design/a8b9a581eb62">https://medium.com/thoughtful-design/a8b9a581eb62</a></cite>
+
+						<aside class="notes">
+							<p>The solution would be to move towards universal design.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Universal Design</h2>
+						<blockquote>Universal design is the design of products and environments to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design.<p class="quoted">- Ron Mace</p></blockquote>
+						<cite>Mace, R. (1998). Universal design in housing. <em>Assistive Technology, 10</em>(1), 21-28.</cite>
+
+						<aside class="notes">
+							<p>The term was originally coined by the architect, Ronald Mace,</p>
+						</aside>
+					</section>
+					<section>
+						<img src="https://udlhcpss.files.wordpress.com/2011/11/principles_ud.png" alt="7 principles of universal design">
+						<cite>The Center for Universal Design. The Principles of Universal Design,  Raleigh, NC: North Carolina State University. <a href="http://udlhcpss.wordpress.com/historical-foundations/">http://udlhcpss.wordpress.com/historical-foundations/</a></cite>
+
+						<aside class="notes">
+							<p>... so the principles tend to be based on physical space but can be summarized with these key words:</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Universal Design Summarized</h3>
+						<ul>
+							<li class="fragment">equitable</li>
+							<li class="fragment">flexible</li>
+							<li class="fragment">simple</li>
+							<li class="fragment">intuitive</li>
+							<li class="fragment">low effort</li>
+							<li class="fragment">approachable</li>
+							<li class="fragment">usable</li>
+						</ul>
+
+						<aside class="notes">
+							<p>One of the most well-known examples is the wheelchair ramp.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="https://farm8.staticflickr.com/7095/7216119402_1f362093e6_b.jpg" alt="example wheelchair ramp">
+						<cite>marziarh. (2012). Robson Square. <a href="https://www.flickr.com/photos/maziarh/7216119402/">https://www.flickr.com/photos/maziarh/7216119402/</a> <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a></cite>
+
+						<aside class="notes">
+							<p>Here’s a thought exercise, which I’ll give you a few moments to think about. Other than wheelchair users, what groups of people might need to use a ramp like this?</p>
+							<p>Other than wheelchair users, there are many other that find ramps useful or even necessary, such as:</p>
+							<ul>
+								<li>parents with strollers,</li>
+								<li>seniors with mobility walkers, and</li>
+								<li>anything else with wheels.</li>
+							</ul>
+							<p>Many places now call it an “access ramp” or just “ramp” to reflect its greater, universal application.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Universal Design for the Web</h3>
+
+						<aside class="notes">
+							<p>Many parts of the website can be thought of the same way. Looking closely at the Web Content Accessibility Guidelines for example, we can see many guidelines that would apply not only for users with disabilities, but all users. Some examples include:</p>
+						</aside>
+					</section>
+					<section>
+						<h3>WCAG Universal Design Examples</h3>
+						<ul>
+							<li class="fragment">each page should have a title</li>
+							<li class="fragment">have consistent navigation</li>
+							<li class="fragment">have a meaningful order to content</li>
+							<li class="fragment">provide multiple ways to discover content</li>
+							<li class="fragment">captions or transcript of audio/video</li>
+						</ul>
+
+						<aside class="notes">
+							<p>multiple ways to discover content e.g. links, search box</p>
+							<p>captions or transcript of audio/video (good for example for ESL, different learning styles).</p>
+							<p>When developing for the web then, we can adopt many of the same principles for universal design as with physical spaces.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Universal Web Design Summarized</h3>
+						<ul>
+							<li class="fragment">solid</li>
+							<li class="fragment">clear</li>
+							<li class="fragment">helpful</li>
+							<li class="fragment">usable</li>
+							<li class="fragment">accessible</li>
+							<li class="fragment">easy to understand</li>
+							<li class="fragment">designed with people in mind first</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Whitney Quesenbery suggests usability principles, summarized as: ...</p>
+							<p>Of course, the question still remains, how do you implement universal design?</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Universal Design in Practice</h2>
+
+					<aside class="notes">
+						<p>Like any methodology, there is no one way. Design, after all, is not an exact science.</p>
+						<p>When designing or reviewing tools or services, I suggest doing as much as is practical.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<img src="images/fangs-example.png" alt="Fangs emulator screenshot">
+
+						<aside class="notes">
+							<p>You might try an empathy exercise, having yourself and others simply experience what it is like to explore the web using different technologies including a screen reader,</p>
+						</aside>
+					</section>
+					<section>
+						<img src="https://farm4.staticflickr.com/3346/3490322415_10510093d7_o.jpg" alt="budgie on keyboard">
+						<cite>MichaelFitz. (2008). Computer Budgie II. <a href="https://www.flickr.com/photos/michaelfitz/3490322415">https://www.flickr.com/photos/michaelfitz/3490322415</a></cite>
+
+						<aside class="notes">
+							<p> only a keyboard, </p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/greyscale-example.png" alt="greyscale version of nnels.ca website">
+						<cite>Greyscale image using <a href="http://colorfilter.wickline.org">http://colorfilter.wickline.org</a></cite>
+
+						<aside class="notes">
+							<p>in greyscale, with a very small screen.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="https://farm9.staticflickr.com/8343/8186415277_5c93137273_b.jpg" alt="cat pressing buttons on cellphone">
+						<cite>tehchix0r. (2012). Texting (Project 365: 242/365). <a href="https://www.flickr.com/photos/tehchix0r/8186415277/">https://www.flickr.com/photos/tehchix0r/8186415277/</a> <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a></cite>
+
+						<aside class="notes">
+							<p>with a very small screen.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Challenges</h2>
+					<ul>
+						<li class="fragment">technological variety</li>
+						<li class="fragment">user diversity</li>
+						<li class="fragment">bridging the knowledge gap</li>
+					</ul>
+					<cite class="fragment">Shneiderman, B., &amp; Hochheiser, H. (2001). Universal usability as a stimulus to advanced interface design. <em>Behaviour &amp; Information Technology, 20</em>(5), 367-376. doi:10.1080/01449290110083602</cite>
+
+					<aside class="notes">
+						<p>Keep in mind that you are faced with three major challenges:</p>
+						<ul>
+							<li>tech variety: hardware, software, network;</li>
+							<li>user diversity: skills, knowledge, disabilities, personality (e.g. exploratory vs. cautionary), environmental conditions (mobility, sunlight, noise), literacy, culture, etc.; and</li>
+							<li>bridging the knowledge gap: between what users know and what they need to know</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Ask Your Users</h2>
+
+						<aside class="notes">
+							<p>All the more important that you do different types of exercises, tests, and studies, whereby you get your users involved as much as possible.</p>
+							<p>Throughout the process, the idea is to keep in mind that your users and the way they access and interact with your services are very diverse.</p>
+							<p>You will want to use various usability methods including:</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Personas</h3>
+						<img src="images/user-personas-example.png" alt="screenshot of example personas">
+						<cite>University of Washington Libraries. (2008). UW Libraries Personas. <a href="http://staffweb.lib.washington.edu/news/units/ITS/ux/2009-q2/persona-construction/final-personas/uw-libraries-personas-overview-of-the-completed-project">http://staffweb.lib.washington.edu/news/units/ITS/ux/2009-q2/persona-construction/final-personas/uw-libraries-personas-overview-of-the-completed-project</a></cite>
+
+						<aside class="notes">
+							<p>user personas, - create fictional people (though usually based on aspects of real people) that represent major user groups of your audience, and I would please ask that you include <a href="http://uxmag.com/articles/book-excerpt-a-web-for-everyone">someone with a disability</a> here;</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Content Inventory</h3>
+						<img src="images/content-inventory-example.png" alt="screenshot of content inventory spreadsheet">
+
+						<aside class="notes">
+							<p>do a content inventory, where you create a list of everything on your site and look at what to keep, revise and remove;</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Card Sort</h3>
+						<img src="images/caperbc-cardsort.png" alt="picture of sticky notes">
+
+						<aside class="notes">
+							<p>do a card sort, where you get users to sort topics of your contents, helping to build the navigation</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Task Analysis</h3>
+						<img src="images/whiteboard-ill.png" alt="picture of whiteboard with writing and screenshots">
+						<cite>Reidsma, M. (2013). Slide 38. Websites are for People. <a href="http://matthew.reidsrow.com/articles/29">http://matthew.reidsrow.com/articles/29</a> <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a></cite>
+
+						<aside class="notes">
+							<p>do a task analysis, analyzing the process to complete a typical or expected task</p>
+							<p>Having the results on hand or on a wall will help keep your users in mind. This is not an exhaustive list, but a good place to start. Check out usability.gov for more methods and details.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Developing Your Service</h2>
+
+						<aside class="notes">
+							<p>As an organization, at some point you’ll likely (hopefully) have gone through a branding exercise, where you set the style and layout of all your communications including business cards, letterhead, print outs, and the website.</p>
+							<p>Everything I’ve mentioned up to this point should inform and allow for</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/mockup-paper-example.jpg" alt="picture of paper mockup">
+
+						<aside class="notes">
+							<p>mockups, wireframes, and decisions to be made about the basic layout and possible categories or types of content.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Approaches</h2>
+					<ul>
+						<li class="fragment"><a href="http://lukew.com/ff/entry.asp?933">mobile first</a></li>
+						<li class="fragment"><a href="http://alistapart.com/article/understandingprogressiveenhancement">progressive enhancement</a></li>
+						<li class="fragment"><a href="http://coding.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/">responsive design</a></li>
+					</ul>
+
+					<aside class="notes">
+						<p>When developing a website, you can tackle some of the technology challenges by using these key strategies: ...</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Mobile First</h3>
+					<blockquote>Mobile forces you to focus. <p class="quoted">- Luke Wroblewski @lukew</p></blockquote>
+					<cite>Wroblewski, L. (2009). Mobile First. <a href="http://www.lukew.com/ff/entry.asp?933">http://www.lukew.com/ff/entry.asp?933</a></cite>
+
+					<aside class="notes">
+						<p>Mobile first means you have to prioritize and focus everything including content, interactive elements, and layout.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h3>Progessive Enhancement</h3>
+						<blockquote>Worry about the less capable first. <p class="quoted">- @Swwweet</p></blockquote>
+						<cite>Usobiaga, J. (2013). Slide 37. <em>Mobile First: As difficult as doing things right</em>. <a href="https://speakerdeck.com/swwweet/mobile-first-as-difficult-as-doing-things-right?slide=37">https://speakerdeck.com/swwweet/mobile-first-as-difficult-as-doing-things-right?slide=37</a></cite>
+
+						<aside class="notes">
+							<p>From there, you add any fancy bits, typically using JavaScript or third-party modules, where you want to consider using accessible ones, particularly UI frameworks, such as jQuery UI.</p>
+							<p>Some seem to believe that this method means you’re always focused on developing for older or simpler browsers, but that’s not true.</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Progressive Enhancement moves almost all of our dev time and costs to newer browsers, not older ones. <p class="quoted">- @scottjehl</p></blockquote>
+						<cite>Jehl, S. (2014). Friday, 7 March 2014. <em>The Pastry Box Project</em>. <a href="https://the-pastry-box-project.net/scott-jehl/2014-March-7">https://the-pastry-box-project.net/scott-jehl/2014-March-7</a></cite>
+
+						<aside class="notes">
+							<p>Additionally, your site is more likely to load quickly, especially if you use specific packages, such as adaptive images or picturefill. </p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>[Over 50% of mobile users] will wait only five seconds or less for a mobile site to load. </blockquote>
+						<cite>Compuware Corporation. (2011). The new (or only) way to connect with customers. <a href="http://www.compuware.com/content/dam/compuware/professional-services/white-papers/The%20New%20or%20Only%20Way%20To%20Connect%20With%20Customers.pdf">http://www.compuware.com/content/dam/compuware/professional-services/white-papers/The%20New%20or%20Only%20Way%20To%20Connect%20With%20Customers.pdf</a></cite>
+
+						<aside class="notes">
+							<p>If you think about it, 5 seconds is actually a long time in terms of page load.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h3>Responsive Design</h3>
+					<img src="images/responsive-caperbc.png" alt="website at three different sizes">
+
+					<aside class="notes">
+						<p>Finally, it makes sense that you would present more information to those who can see more on their screen at once, which is where responsive design comes in.</p>
+						<p>I won’t get into any of these because each one is typically one (or more) session on its own, but these are not new practices anymore, so if you’re not familiar with them, there is certainly a lot of material for you to read, some of which I’ve linked here.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Good Practices</h2>
+						<ul>
+							<li class="fragment">well structured code</li>
+							<li class="fragment">style guides e.g. <a href="https://necolas.github.io/normalize.css/">Normalize CSS</a></li>
+							<li class="fragment">pattern libraries e.g. <a href="http://gvsulib.com/ui/">UI Pattern Library by GVSU</a></li>
+							<li class="fragment">polyfills and other helper libraries e.g. <a href="https://github.com/scottjehl/picturefill">picturefill</a></li>
+							<li class="fragment">APIs e.g. <a href="http://api.lib.sfu.ca/">SFU Library API</a></li>
+							<li class="fragment">testing frameworks or set of evaluation tools e.g. <a href="http://quailjs.org/">QuailJS</a></li>
+							<li class="fragment">good documentation e.g. <a href="http://phabricator.org/">Phabricator</a></li>
+						</ul>
+
+						<aside class="notes">
+							<p>To make things more efficient and consistent, be sure to use (or at least consider using):</p>
+							<p>APIS - possibly building your own</p>
+							<p>good documentation (which yes, will require some writing time on your part)</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Some “Special” Considerations</h2>
+
+					<aside class="notes">
+						<p>While making use of best practices and comforming to a good set of guidelines, such as the <a href="http://www.w3.org/WAI/WCAG20/quickref/">Web Content Accessibility Guidelines (WCAG)</a>, (along with everything else) should be enough, there are a few considerations that I want to cover because they are commonly missed or not thought about.</p>
+						<p>Let’s start with</p>
+					</aside>
+				</section>
+				<section>
+					<h3>Keyboard Accessibility</h3>
+					<img src="http://cynng.files.wordpress.com/2014/02/wp-theme-input-focus.png" alt="search field with outline" class="fragment">
+
+					<aside class="notes">
+						<p>Websites should always be fully accessible by a keyboard. Interactive elements should be navigable and controllable by keyboard, keyboard shortcuts should not override default behaviour, and users should always know where they are.</p>
+						<p>For example, visual cues for input focus help your users regardless of whether they only use a keyboard or not, but are necessary for keyboard only users.</p>
+					</aside>
+				</section>
+				<section>
+					<h3>Skip Links</h3>
+					<pre class="fragment"><code data-trim class="html">
+&lt;body&gt;
+&lt;a class="hide-text" href="#main"&gt;Skip to Main Content&lt;/a&gt;
+
+&lt;nav role="navigation"&gt;
+	// Menu
+&lt;/nav&gt;
+
+&lt;div id="main" role="main"&gt;
+	 // Content
+&lt;/div&gt;
+
+&lt;/body&gt;
+					</code></pre>
+					<cite class="fragment">Schofield, M. (2014). ARIA for the Spec Impaired. <a href="http://ns4lib.com/aria-primer/">http://ns4lib.com/aria-primer/</a></cite>
+
+					<aside class="notes">
+						<p>Ideally, your source order actually has your menu below your content, but if you're constrained, skip links are useful for both keyboard only, and screen reader users. Skip links are simple links that allow users to skip repeated parts of your website, such as your header or menu.</p>
+					</aside>
+				</section>
+				<section>
+					<h3>ARIA</h3>
+					<p><a href="http://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications Suite</a></p>
+					<pre class="fragment"><code data-trim class="html">
+&lt;nav role="navigation"&gt;
+	// Menu
+&lt;/nav&gt;
+					</code></pre>
+					<p class="fragment">Reference:</p>
+					<ul class="fragment">
+						<li><a href="http://ns4lib.com/aria-primer/">ARIA for the Spec Impaired</a></li>
+						<li><a href="http://www.w3.org/TR/aria-in-html/#recommendations-table">Using ARIA in HTML Recommendation Table</a></li>
+					</ul>
+
+					<aside class="notes">
+						<p>The role attribute that you see as part of the nav and main content div is part of the Accessible Rich Internet Applications Suite, or ARIA. Basically, it’s a way to add attributes to your code to make your site more accessible by telling a screen reader what ‘role’ your elements play.</p>
+						<p>So, “navigation” says this is where the main menu or navigation is.</p>
+						<p>You need to do some research on when to use these, and I have some ARIA resources listed.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h3>Media</h3>
+						<ul>
+							<li class="fragment">Images: alt=""</li>
+							<li class="fragment">Audio: transcript</li>
+							<li class="fragment">Video: transcript</li>
+							<li class="fragment">Video: captions</li>
+							<li class="fragment">Video: descriptive audio</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Last but not least, let’s talk about media.</p>
+							<p>Media should have a text alternative. This is generally fairly straightforward.</p>
+							<p>For images, most people are familiar with alt text, and I’ll talk about this more later.</p>
+							<p>Audio should have transcripts.</p>
+							<p>For videos, transcripts will also work, but should have captions,</p>
+						</aside>
+					</section>
+					<section>
+						<h4>Descriptive Video Example</h4>
+						<iframe width="853" height="480" src="//www.youtube-nocookie.com/embed/PCZqKxQME6o?rel=0" frameborder="0" allowfullscreen></iframe>
+						<cite>Electrox3d. (2011). Star Wars for Blind People (Blu-ray audio track): description of a Jawa shooting R2!. <a href="http://www.youtube.com/watch?v=PCZqKxQME6o">http://www.youtube.com/watch?v=PCZqKxQME6o</a></cite>
+
+						<aside class="notes">
+							<p>and ideally, a descriptive audio track (example video).</p>
+							<p>One of the most problematic issues (and irritating too) is media that automatically starts playing.</p>
+							<p>You might think that the no autoplay guideline is very obvious.</p>
+						</aside>
+					</section>
+					<section data-background="images/top10-carousel.png">
+						<h2>Top 10 Academic Library Websites</h2>
+						<p class="fragment">6 / 10 have carousel</p>
+						<p class="fragment">5 / 6 autoplay</p>
+						<cite class="fragment">Singley, E. (2013). Top 10 Academic Library Websites. <a href="http://emilysingley.net/top-10-academic-library-websites-2013/">http://emilysingley.net/top-10-academic-library-websites-2013/</a></cite>
+
+						<aside class="notes">
+							<p>Except, just over a year ago, a list of top 10 academic library websites was posted and when I last checked last, 6/10 had a carousel, 5/6 autoplay</p>
+							<p>I’m not trying to pick on any of these particular websites, but simply used this list as a way to survey the landscape so to speak.</p>
+						</aside>
+					</section>
+					<section data-background="images/top20-carousel.png">
+						<h2>Top 20 Public Library Websites</h2>
+						<p class="fragment">18 / 20 had carousel</p>
+						<p class="fragment">17 / 18 autoplay</p>
+						<cite class="fragment">Anderson, M. (2013). 20 Great Public Library Websites. <a href="http://www.mattanderson.org/blog/2013/02/11/20-great-public-library-websites/">http://www.mattanderson.org/blog/2013/02/11/20-great-public-library-websites/</a></cite>
+
+						<aside class="notes">
+							<p>It’s actually not as telling when I last did the same exercise with the list of top 20 public library websites, and the result was that ...</p>
+							<p>This is why, at some point, I wrote a call to action to bring</p>
+						</aside>
+					</section>
+					<section>
+						<h2>Death to the Carousel</h2>
+						<cite>Inspired by <a href="http://shouldiuseacarousel.com">shouldiuseacarousel.com</a></cite>
+
+						<aside class="notes">
+							<p>By the way, this is inspired by should i use a carousel dot com, where I wrote a blog post about the issues carousels typically have including frequently a lack of keyboard accessibility.</p>
+							<p>Okay, I admit that it is possible to create an accessible carousel, and they already exist, but they are rarely used, or used in an inaccessible manner. I’m not actually telling you never to use them, but to really think hard about how and why you’re using one.</p>
+							<p>But enough of that. Let’s move on.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Testing and Assessment</h2>
+						<h3 class="fragment">Frameworks</h3>
+						<ul>
+							<li class="fragment"><a href="http://quailjs.org/">QuailJS</a></li>
+						</ul>
+						<h3 class="fragment">Evaluation Tools</h3>
+						<ul>
+							<li class="fragment"><a href="http://squizlabs.github.com/HTML_CodeSniffer/">HTML Codesniffer</a> (bookmarklet)</li>
+							<li class="fragment"><a href="https://addons.mozilla.org/en-us/firefox/addon/wcag-contrast-checker/">WCAG Contrast Checker</a> (Firefox plugin)</li>
+							<li class="fragment"><a href="http://wave.webaim.org/toolbar/">WAVE Toolbar</a></li>
+							<li class="fragment">For more, <a href="http://www.w3.org/WAI/ER/tools/">W3C Web Accessibility Tools list</a></li>
+						</ul>
+						<h3 class="fragment">Simulation Tools</h3>
+						<ul>
+							<li class="fragment"><a href="http://vischeck.com/">VisCheck</a></li>
+							<li class="fragment"><a href="http://www.standards-schmandards.com/projects/fangs/">Fangs</a></li>
+						</ul>
+
+
+						<aside class="notes">
+							<p>To assess your tool or service, you can use automated methods or tools. You might use a framework, such as QuailJS. Other options include evaluation tools.</p>
+							<p>Evaluation tools allow you to check conformance to guidelines. For example,</p>
+							<ul>
+								<li>HTML Codesniffer (bookmarklet) - check against WCAG, including when logged in</li>
+								<li>WCAG Contrast Checker (Firefox plugin)</li>
+								<li>WAVE Toolbar - view as text-only, outline only, etc.</li>
+								<li>For more, check the W3C Web Accessibility Tools list</li>
+							</ul>
+							<p>There are also simulation tools allow you to simulate certain conditions or environments. For example, VisCheck takes images and simulates colour blindness. (Vischeck also provides a tool called Daltonize, which attempts to correct images.). There are also some screen reader emulators, such as Fangs, which I showed you briefly earlier.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Analytics</h3>
+
+						<aside class="notes">
+							<p>Numbers can’t tell you why, but they can help your assessment.</p>
+							<p>For example, numbers on visits and bounces can help you decide what to further assess, what’s popular, or what’s hard to find. </p>
+							<p>Rather than pure numbers, trends from analytics can be very helpful. Usage throughout a day, week, or year can help you decide on when to make changes, or promote things. It might even indicate when you’re more likely to get users for your usability tests.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="http://www.hdwallpapers-3d.com/wp-content/uploads/2014/07/heat-map-hd-wallpaper-2.jpg" alt="example heat map of website">
+						<cite>HD Wallpapers 3D.com. (n.d.) Heat Map HD Wallpaper 3. <a href="http://www.hdwallpapers-3d.com/heat-map/heat-map-hd-wallpaper-3/">http://www.hdwallpapers-3d.com/heat-map/heat-map-hd-wallpaper-3/</a>. Believed to be in public domain.</cite>
+
+						<aside class="notes">
+							<p>In particularly, heat maps are good indicators of what people are looking for and where.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>User Testing</h2>
+					<ul>
+						<li class="fragment">5 second test</li>
+						<li class="fragment">Lab Task Test</li>
+						<li class="fragment">Guerilla Testing</li>
+						<li class="fragment">Paid Testing (e.g. VIRN)</li>
+					</ul>
+
+					<aside class="notes">
+						<p>However, numbers and tests is not an indication that your website is actually accessible or usable. Nothing can replace actual user and usability testing throughout  development.</p>
+						<p>This is where usability testing comes in, which can be as simple or complex as you make it. </p>
+						<p>Simple ones include a “5 second test” where for example, you ask a user where they might click on a home page given a specific task. I also want to reiterate that testing and assessment should not all be done at the end, but throughout the process. The “5 second test” I’ve described is a great test to do while you’re still at the design stage.</p>
+						<p>More complex usability testing might involved scheduling specific individuals to answer questions and complete tasks in a lab setting where audio and video are recorded in a longer session.</p>
+						<p>Nevertheless, user testing can also be something in between. Guerilla testing is very popular whereby a laptop is setup with screen, video, and audio recording in a small area of a high traffic area, asking users who pass by to sit down for 10-15 minutes.</p>
+						<p>If you have some money, but not the time and in-house resources, there are lots of companies that will run usability tests for you.</p>
+						<p>If you want to specifically have disabled users test your service, I encourage you to collaborate with another department or team. If that’s not possible, Canadian organizations, such as the Vision Impaired Resource Network (VIRN), will do accessibility assessments on websites for a fee.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Training and Documentation</h2>
+						<h3 class="fragment">Guidelines for Content Creators</h3>
+						<ol>
+							<li class="fragment">Be clear and concise</li>
+							<li class="fragment">Use headers and tables properly</li>
+							<li class="fragment">Use descriptive links</li>
+							<li class="fragment">Describe images if needed</li>
+							<li class="fragment">Make and choose videos with captions, and add a link if you embed them</li>
+						</ol>
+
+						<aside class="notes">
+							<p>With the rise of the CMS, fewer organizations have a single person writing content for the website. When staff in an organization are restricted within their roles on a CMS, there is no reason that staff members should not be empowered to write and edit the content for the areas they are responsible for, and fix minor errors in other areas.</p>
+							<p>While you cannot control what other people write, you can encourage best practices by providing a few simple guidelines. By giving staff examples and resources, you can build content best practices into the writing process.</p>
+							<ol>
+								<li>Be clear and concise - because users don’t want to read whole paragraphs to get the answer they want</li>
+								<li>Use headers and tables properly - I tell them to use headers like they would in a report, and tables should only be for displaying data (not for layout purposes)</li>
+								<li>Use descriptive links - pretending the only context a user has is what page they’re on</li>
+								<li>Describe images if needed (GO DOWN) e.g. alt text decision flow chart</li>
+								<li>Last but not least, Make and choose videos with captions, and add a link if you embed them</li>
+							</ol>
+							<p>Emphasize that the guidelines are for everyone’s benefit, and that the accessibility and usability of content is a shared responsibility.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="http://www.4syllables.com.au/wp-content/uploads/2010/12/decision-tree1.png" alt="alt text decision flow chart">
+						<cite>MrShuffleupagus. (2014). This is a picture I took of a friend's dog, Spike, and the face he makes whenever he's confused. <a href="http://www.4syllables.com.au/2010/12/text-alternatives-decision-tree/">http://www.4syllables.com.au/2010/12/text-alternatives-decision-tree/</a></cite>
+
+						<aside class="notes">
+							<p>You can give your staff resources, such as this alt text decision flow chart to help them. (BACK UP)</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Accessibility Statement</h2>
+						<ul>
+							<li class="fragment"><a href="http://www.w3.org/TR/WCAG20/#conformance-claims">WCAG Conformance Claims</a></li>
+							<li class="fragment"><a href="https://www.access8878.co.uk/getting-started-with-bs-8878/creating-an-accessibility-statement.aspx">Access 8878 Accessibility Statement Template</a></li>
+						</ul>
+
+						<aside class="notes">
+							<p>Now that your staff have some guidance, what about your users? While not required, one of the great ways to be transparent and show your organization’s efforts in supporting equitable access is to have an accessibility statement.</p>
+							<p>What you can or cannot do will really depend on your role, your CMS, and your organization, but</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>I’ve learned that what matters [...] is an actionable process — possible to use, adapted to the company’s culture and financially effective. <p class="quoted">- Marcin Treder @marcintreder</p></blockquote>
+						<cite>City of Calgary. (2010). Universal Design Handbook. <a href="http://www.calgary.ca/CSPS/CNS/Pages/Publications-guides-and-directories/Universal-Design-Handbook.aspx">http://www.calgary.ca/CSPS/CNS/Pages/Publications-guides-and-directories/Universal-Design-Handbook.aspx</a></cite>
+
+						<aside class="notes">
+							<p>An accessibility statement help you to document your outcomes and clarify for users what to expect. This statement is where you might also write a short explanation and list the impact of your third-party services.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Resources</h3>
+						<ul>
+							<li class="fragment"><a href="http://www.w3.org/TR/WCAG20/#conformance-claims">WCAG Conformance Claims</a></li>
+							<li class="fragment"><a href="https://www.access8878.co.uk/getting-started-with-bs-8878/creating-an-accessibility-statement.aspx">Access 8878 Accessibility Statement Template</a></li>
+						</ul>
+						<h3 class="fragment">Examples</h3>
+						<ul>
+							<li class="fragment"><a href="http://www.libraries.psu.edu/psul/about/webaccesspolicy.html">Penn State University Libraries Web Accessibility Statement</a></li>
+							<li class="fragment"><a href="http://www.torontopubliclibrary.ca/terms-of-use/library-policies/accessibility-people-disabilities.jsp">Toronto Public Library Accessibility Policy</a></li>
+							<li class="fragment"><a href="http://www.ox.ac.uk/accessibility">University of Oxford Accessibility Statement</a></li>
+						</ul>
+
+						<aside class="notes">
+							<p>For guidelines on writing an accessibility statement, take a look at ...</p>
+							<p>If you want to see what others are doing, take a look at ...</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Take Away</h2>
+
+					<aside class="notes">
+						<p>Alright, I know that was a lot of information, so if you missed any of that, don’t worry, my slides will be posted and the recording will be available for you to review.</p>
+						<p>While it’s important to take best practices into consideration and put sound methodologies into practice, if you leave here with only one thing today, it is that we should all be creating and building our services (not just web services) with universal design in mind. Think about your web services, but beyond the website, what about catalogue or discovery layer, what about the online content or documents you provide?</p>
+					</aside>
+				</section>
+
+				<section>
+					<blockquote>Until people find themselves in a situation where they are disabled due to their surroundings, they cannot fully appreciate how the built and virtual environments can throw obstacles in their paths – and indeed, profoundly affect their quality of life.<p class="quoted">- City of Calgary</p></blockquote>
+					<cite>City of Calgary. (2010). Universal Design Handbook. <a href="http://www.calgary.ca/CSPS/CNS/Pages/Publications-guides-and-directories/Universal-Design-Handbook.aspx">http://www.calgary.ca/CSPS/CNS/Pages/Publications-guides-and-directories/Universal-Design-Handbook.aspx</a></cite>
+
+					<aside class="notes">
+						<p>So, let’s build services that everyone can use.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<div class="contact">
+						<h3>Contact</h3>
+						<img src="images/nodoka-transparent.png" alt="nodoka holding a stack of books">
+						<ul>
+							<li>Cynthia Ng</li>
+							<li>@TheRealArty</li>
+							<li><a href="http://about.me/cynthiang">about.me/cynthiang</a></li>
+						</ul>
+					</div>
+
+					<aside class="notes">
+						<p>Thank you.</p>
+					</aside>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
