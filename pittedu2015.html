@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Making Accessible Content Easy and Part of Your Work - Cynthia Ng</title>
+
+		<meta name="description" content="Center for Instruction Development &amp; Distance Education at the University of Pittsburgh Webinar February 2015 presentation on creating accessible (digital) content.">
+		<meta name="author" content="Cynthia &quote;Arty&quote; Ng">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple-custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Making Accessible Content Easy and Part of Your Work</h1>
+					<p>
+							<a href="http://about.me/cynthiang">Cynthia Ng</a><br>
+							<a href="http://twitter.com/TheRealArty">@TheRealArty</a><br>
+							February 5, 2015
+					</p>
+					<aside class="notes">
+						<p>Introduction - Hi everyone, hope you’re having a good day.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>What is Web Accessibility?</h2>
+
+						<aside class="notes">
+							<p>We’re here today to talk about accessibility, but what <em>is</em> accessibility?</p>
+							<p>One definition, and what seems to be the most common one is that</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Web accessibility means that people with disabilities can use the Web. <p class="quoted">- W3C Web Accessibility Initiative (WAI)</p></blockquote>
+						<cite>W3C Web Accessibility Initiative. (2005). What is Web Accessibility. <em>Introduction to Web Accessibility</em>. <a href="http://www.w3.org/WAI/intro/accessibility.php"><a href="http://www.w3.org/WAI/intro/accessibility.php">http://www.w3.org/WAI/intro/accessibility.php</a></a></cite>
+
+						<aside class="notes">
+							<p>Having established that, we might look at defining a disability. That’s actually a really hard task, but we can look at the different types of disabilities.</p>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Types of Disabilities</h2>
+						<ul>
+							<li class="fragment">visual</li>
+							<li class="fragment">auditory</li>
+							<li class="fragment">physical/motor</li>
+							<li class="fragment">touch</li>
+							<li class="fragment">learning</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>visual: other than blindness, this might also refer to people who have difficulty with judging distances and hand-eye coordination</li>
+								<li>auditory: other than deafness, this might also refer to other hearing issues, such as having difficulty focusing on a single voice</li>
+								<li>physical/motor: examples include not being able to grip something or problems with precise movements</li>
+								<li>touch: namely this refers to a lack of sensation with touch</li>
+								<li>learning: is a rather large umbrella term, but includes dyslexia and other reading disabilities, as well as dysphasia and related issues with writing</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Why Should You Care?</h2>
+
+						<aside class="notes">
+							<p>So now that we have an idea of the group of people we're referring to, why should we care?</p>
+							<p>People with a disability are a minority, and not all of them need special consideration for web accessibility, right? While that may be true, you might be surprised by some of the facts.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/15in10.png" alt="icon of 10 people, one and a half of which is coloured in">
+						<cite>Brault, Matthew W. (2012). Americans With Disabilities: 2010 <em>Household Economic Studies.</em> <a href="http://www.census.gov/prod/2012pubs/p70-131.pdf">http://www.census.gov/prod/2012pubs/p70-131.pdf</a></cite>
+
+						<aside class="notes">
+							<p>According to the last US Census in 2010, 16.6% (29.5 mill) of adults (21-64) had a disability.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Disability > Minority*</h3>
+						<cite>* Based on 2010 US census <a href="http://www.census.gov/prod/2012pubs/p70-131.pdf">percentage of total population with a disability</a>, and the <a href="http://www.census.gov/prod/cen2010/briefs/c2010br-02.pdf">percentage of total population of minorities.</a></cite>
+
+						<aside class="notes">
+							<p>The number of people with a disability is larger than any one group of ethnic or visible minority. That’s a Big Minority.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Policy &amp; Legislation</h3>
+
+						<aside class="notes">
+							<p>In the US, there are two Acts to consider. </p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>No otherwise qualified individual with a disability shall [...] be excluded from [...] any program or activity receiving Federal financial assistance. <p class="quoted">- Section 504</p></blockquote>
+						<cite>United States Department of Labor. (n.d.).  Section 504, The Rehabilitation Act of 1973. <a href="http://www.dol.gov/oasam/regs/statutes/sec504.htm">http://www.dol.gov/oasam/regs/statutes/sec504.htm</a></cite>
+
+						<aside class="notes">
+							<p>The Rehabilitation Act of 1973, includes this clause in Section 504 ...</p>
+						</aside>
+					</section>
+					<section>
+						<h4>The Americans with Disabilities Act</h4>
+
+						<aside class="notes">
+							<p>The Americans with Disabilities Act provides civil rights to people with disabilities much like the Civil Rights Act would apply based on race or religion.</p>
+							<p>Many states, grants, and programs also have their own policies that may be similar or extend the list of requirements.</p>
+						</aside>
+					</section>
+					<section>
+						<h4>At Pitt Edu</h4>
+						<p><a href="http://www.studentaffairs.pitt.edu/drspolicies">Disabilities Resources and Services policies</a></p>
+
+						<aside class="notes">
+							<p>For more information on how these policies apply at your university, check the Disabilities Resources and Services policies page, which includes rights and responsibilities, as well as grievance procedures.</p>
+							<p>And, while you might be convinced, but what about others?</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Getting Buy-in</h2>
+
+						<aside class="notes">
+							<p>People frequently ask me how to get buy-in from others, because they might be convinced that we should care about accessibility and do something about it, but too often, accessibility is put aside because it’s too difficult, time consuming, or due to a belief that “accessible websites are ugly.”</p>
+							<p>On a side note, this last excuse is not true. I mean yes, some accessible websites are ugly, but in the same way that some websites are ugly regardless of the level of accessibility. If anything, the most accessible websites I’ve reviewed have been fairly pleasing to the eye.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/govuk-screenshot.png" alt="gov.uk screenshot">
+
+						<aside class="notes">
+							<p>Just check out <a href="http://gov.uk">gov.uk</a>.</p>
+						</aside>
+					</section>
+					<section>
+						<h2>Benefits</h2>
+						<ul>
+							<li class="fragment">reflect institutional mission, leadership, and values</li>
+							<li class="fragment">serve all users</li>
+							<li class="fragment">make sound fiscal policy</li>
+							<li class="fragment">add value to the institution</li>
+						</ul>
+						<cite class="fragment">Sources: Maler, A. (2013). The Complete Beginner’s Guide to Universal Design. UX Booth<em>. <a href="http://www.uxbooth.com/articles/the-complete-beginners-guide-to-universal-design/">http://www.uxbooth.com/articles/the-complete-beginners-guide-to-universal-design/</a> and Rowland, C., Mariger, H., Siegel, P. M., &amp; Whiting, J. (2010). Universal Design for the Digital Environment: Transforming the Institution. </em>EDUCAUSE Review*, 45(6). <a href="http://www.educause.edu/ero/article/universal-design-digital-environment-transforming-institution">http://www.educause.edu/ero/article/universal-design-digital-environment-transforming-institution</a></cite>
+
+						<aside class="notes">
+							<p>In any case, there are numerous reasons you can present as benefits for putting into practice the methodologies presented, including that they:</p>
+							<ul>
+								<li>reflect institutional mission, leadership, and values,</li>
+								<li>serve all users, - not just those with disabilities, and I’ll talk more about this</li>
+								<li>make sound fiscal policy, - since it improves efficiency and reduces costs while maintaining quality, avoids retrofitting, inequitable solutions, litigation; frequently fulfills grant/contract requirements - and</li>
+								<li>add value to the institution. - because you have a better website, it benefits more people (e.g. captions to help people with varying language skills), loads more quickly in browsers, requires less bandwidth, is easier to maintain and update, tends to have a higher return in search engines, and higher compatibility with various software and hardware.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Benefits Simplified</h2>
+						<ul>
+							<li class="fragment">findable</li>
+							<li class="fragment">accessible</li>
+							<li class="fragment">usable</li>
+							<li class="fragment">shareable</li>
+							<li class="fragment">efficient</li>
+							<li class="fragment">collaborative</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Which boils down to being more: ...</p>
+							<p>Of course, knowing <em>why</em> doesn’t tell you <em>how</em> to approach accessibility.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Approach to Accessibility</h2>
+
+						<aside class="notes">
+							<p>Whether you want to, or because you’re told to, half the battle seems to simply be figuring out your approach.</p>
+							<p>If, like many others, you see accessibility as something at the end of a checklist, then that’s when you’ll deal with it.</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Accessibility often gets pigeon-holed as simply making sure there are no barriers to access for screen readers or other assistive technology, <em>without</em> regard to usability.<p class="quoted">- Whitney Quesenbery @whitneyq</p></blockquote>
+						<cite>Quesenbery, W. (2009). Usable Accessibility: Making Web Sites Work Well for People with Disabilities. UX Matters. <a href="http://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php">http://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php</a></cite>
+
+						<aside class="notes">
+							<p>Just because something is accessible does not mean it’s usable, but first...</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Designing for Assistive Technology</h2>
+
+						<aside class="notes">
+							<p>Let’s also take a look at her point on “assistive technology”.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Assistive Technology</h3>
+						<ul>
+							<li class="fragment">screen readers</li>
+							<li class="fragment">text-to-speech</li>
+							<li class="fragment">screen magnifiers</li>
+							<li class="fragment">joysticks</li>
+							<li class="fragment">mobile devices</li>
+							<li class="fragment">keyboards</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Say as part of your approach, you want to make sure your service is accessible to all assistive technology. You start with ‘screen readers’ on your list,  and do some searching and start adding, other ‘text-to-speech’ software, ‘screen magnifiers’, ‘joysticks’, what about ‘mobile devices’ with the added accessibility features? What about ‘keyboards’ for keyboard accessibility?</p>
+							<p>Is there anyone who doesn’t use a keyboard or touch screen regularly?</p>
+							<p>At this point, you might realize that</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>All Technology is Assistive Technology. <p class="quoted">- Sara Hendren @ablerism</p></blockquote>
+						<cite>Hendron, S. (2013). All Technology is Assistive Technology: 6 dispositions for designers on disability. <a href="https://medium.com/thoughtful-design/a8b9a581eb62">https://medium.com/thoughtful-design/a8b9a581eb62</a></cite>
+
+						<aside class="notes">
+							<p>We are not creating content for a specific piece of technology, we can’t.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="http://a0.www.animoca.com/v1.0.15/en/wp-content/uploads/2012/05/All-the-Myriad-Androids-Animoca.png" alt="table with over 30 android devices">
+						<cite>animoca. (2012). All the Myriad Androids. <a href="http://www.animoca.com/en/2012/05/all-the-myriad-androids/">http://www.animoca.com/en/2012/05/all-the-myriad-androids/</a> <a href="https://creativecommons.org/licenses/by-nd/3.0/us/">CC-BY-ND 3.0</a></cite>
+
+						<aside class="notes">
+							<p>There are too many potential devices and ways people are using devices to do that. We aren’t even necessarily creating content for people, because...</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<blockquote>There is no average or normal user. <p class="quoted">- Sara Hendren @ablerism</p></blockquote>
+					<cite>Hendron, S. (2013). All Technology is Assistive Technology: 6 dispositions for designers on disability. <a href="https://medium.com/thoughtful-design/a8b9a581eb62">https://medium.com/thoughtful-design/a8b9a581eb62</a></cite>
+
+					<aside class="notes">
+						<p>We are creating for potential situations, because conditions including physical or environmental ones can be temporary.</p>
+						<p>So how do you create content to fit assistive technology, if that includes all technology and situations? You don’t.</p>
+						<p>What we need to do is change the way we think about accessibility, and move towards universal design.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Universal Design</h2>
+						<blockquote>Universal design is the design of products and environments to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design.<p class="quoted">- Ron Mace</p></blockquote>
+						<cite>Mace, R. (1998). Universal design in housing. <em>Assistive Technology, 10</em>(1), 21-28.</cite>
+					</section>
+					<section>
+						<img src="https://udlhcpss.files.wordpress.com/2011/11/principles_ud.png" alt="7 principles of universal design">
+						<cite>The Center for Universal Design. The Principles of Universal Design,  Raleigh, NC: North Carolina State University. <a href="http://udlhcpss.wordpress.com/historical-foundations/">http://udlhcpss.wordpress.com/historical-foundations/</a></cite>
+
+						<aside class="notes">
+							<p>The term, Universal Design, was originally coined by the architect, Ronald Mace, so the principles tend to be based on physical space but can be summarized with these key words:</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Universal Design Summarized</h3>
+						<ul>
+							<li class="fragment">equitable</li>
+							<li class="fragment">flexible</li>
+							<li class="fragment">simple</li>
+							<li class="fragment">intuitive</li>
+							<li class="fragment">low effort</li>
+							<li class="fragment">approachable</li>
+							<li class="fragment">usable</li>
+						</ul>
+
+						<aside class="notes">
+							<p>... approachable and usable.</p>
+							<p>One of the most well-known examples is the wheelchair ramp.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="https://farm8.staticflickr.com/7095/7216119402_1f362093e6_b.jpg" alt="example wheelchair ramp">
+						<cite>marziarh. (2012). Robson Square. <a href="https://www.flickr.com/photos/maziarh/7216119402/">https://www.flickr.com/photos/maziarh/7216119402/</a> <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a></cite>
+
+						<aside class="notes">
+							<p>Here’s a thought exercise, which I’ll give you a few moments to think about. Other than wheelchair users, what groups of people might need to use a ramp like this?</p>
+							<p>Other than wheelchair users, there are many other that find ramps useful or even necessary, such as:</p>
+							<ul>
+								<li>parents with strollers,</li>
+								<li>seniors with mobility walkers, and</li>
+								<li>anything else with wheels.</li>
+							</ul>
+							<p>Many places now call it an “access ramp” or just “ramp” to reflect its greater, universal application.</p>
+							<p>So the goal here is to make your web content accessible and usable for your whole audience, without trying to specifically accommodate for one group. Hopefully, as I go through some guidelines and suggestions, it will occur to you what groups of people might benefit other than people with disabilities.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Content Guidelines</h2>
+
+						<aside class="notes">
+							<p>Regardless of whether you’re creating your content in an online system, such as Blackboard, or document editing software, such as Microsoft Word, there are a few simple guidelines you can follow to make your content much more accessible.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>General Writing</h3>
+						<ul>
+							<li class="fragment">use consistent language</li>
+							<li class="fragment">write out acronyms the first time you use them</li>
+							<li class="fragment">be clear and concise</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Let's start with some general writing tips: first, use consistent language. For example, if students are given optional readings, do not use "Additional Readings" in one place and then "Optional Readings" in another. Try to be consistent across all your writing across courses, webpages, even print documents.</p>
+							<p>Next, write out acronyms the first time you use them. And when writing, be clear and concise.</p>
+							<p>That's it. Well, okay, not really, but those really are the only ones that are specific to writing style or the use of words. All the other guidelines I will cover are more about structuring or marking up content.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Headings</h3>
+						<ul>
+							<li class="fragment">Header 1 (Title): Making Content Accessible</li>
+							<li class="fragment">Header 2 (Topic): Creating Documents</li>
+							<li class="fragment">Header 3 (Subtopic): Using Headers</li>
+							<li class="fragment">Header 2 (Topic): Creating Media</li>
+						</ul>
+
+						<aside class="notes">
+							<p>The first one I want to cover is headings.</p>
+							<p>Imagine you’re writing a report. Think about how you would structure the headings. You’d have your title as a header 1, your various topics as header 2, and any subtopics as header 3. You might even have header 4, 5 or 6 depending on how much you break down each topic. Now apply that thinking to how you structure content on a web page.</p>
+							<p>For example, header 1 is ... creating media.</p>
+							<p>Issues will arise if you rely on font size or bold instead of headers, or if you use the wrong header level.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Using Styles</h3>
+						<img src="http://webaim.org/techniques/word/media/styles2007.gif" alt="styles portion of Microsoft Word ribbon" class="fragment">
+						<img src="http://webaim.org/techniques/word/media/stylesmac.gif" alt="styles drop down in Word for Mac" class="fragment">
+						<cite class="fragment">WebAIM. (2014). Microsoft Word. <a href="http://webaim.org/techniques/word/">http://webaim.org/techniques/word/</a> <br>&copy; WebAIM. Used under full credit, at no cost allowance as per the <a href="http://webaim.org/copyright">WebAIM Copyright &amp; Terms of Use</a>.</cite>
+
+						<aside class="notes">
+							<p>Selecting a header is very simple. In Word 2007 or newer, you have a very prominent section of the Home tab in the ribbon. In other software or online editors, usually it is a dropdown. Many programs even have keyboard shortcuts to assign header styles.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Changing Styles</h3>
+						<img src="images/word-change-style.png" alt="styles context menu">
+
+						<aside class="notes">
+							<p>If you don’t like the look of a header, then change the style of the header for the entire document.</p>
+							<p>In most document editing programs, you can right click to get a menu that allows you to select "modify", whereby you modify the style for the entire document. If you already made the changes you want to a part of your text, you can use the "update style to match selection" option, then everything with that particular style will change to match the text you selected.</p>
+							<p>Unfortunately, you don't have much choice in the looks when you're using an editor inside of an online system, but keep in mind that it helps to make web content consistent across the university.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Font Face, Size, &amp; Colour</h3>
+							<ul>
+								<li class="fragment">Font Face: Arial, Verdana, a Sans-Serif font</li>
+								<li class="fragment">Font Size: 12pt or higher</li>
+								<li class="fragment">Font Colour: black or default</li>
+							</ul>
+
+						<aside class="notes">
+							<p>When editing your styles, keep in mind that you want to use an easy to use sans-serif font, such as Arial or Verdana. There are of course many others to choose from. Actually, let me skip ahead a little here in case you don't know what that means.</p>
+							<p>Next is font size. 12 point or higher is recommended for the body text. For headers, you will simply want to increase it relative to your body text. So if you use a 12 pt body text size, header 3 might be 14 pt, header 2 16 pt, and header 1 18pt. 2 pts is a small gap though, and the bigger the difference, the easier it is to spot the differences between headers when reading text. Consider using bold and italics to differentiate headers too.</p>
+							<p>For font colour, I recommend black since the background will pretty much always be white. I do say default is another choice, because in some cases, such as links, you may want to leave it as the standard blue colour. The most important thing is that there is a high contrast between the background and your chosen colours, and that you avoid relying on font colour to relay your message. I'll talk about how to check colour contrast later on.</p>
+							<p>Again, you may not have a choice in an online system, but if you notice any issues, let the appropriate person or department know.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Serif vs. Sans-Serif Font</h3>
+						<img src="http://triggersandsparks.com/wp-content/uploads/2010/03/serifs_vs_sans.jpg" alt="word cats used to display the serifs in a font with sans-serif font for comparison">
+						<cite>Carlton R. (2015). Challenge Bingo FAQ! Post #49. <a href="http://www.sweetshoppecommunity.com/forum/showthread.php?p=1062723008">http://www.sweetshoppecommunity.com/forum/showthread.php?p=1062723008</a>.<br>Reuse as per <a href="http://www.sweetshoppedesigns.com/index.php/tou/">Sweet Shopped Designs Terms of Use</a></cite>
+
+						<aside class="notes">
+							<p>A serif is a small line attached to the end of a stroke in a letter, which is what you see circled in the top example. Serifs come in different styles: round, straight edged; but are basically small decorative pieces. Sans-serif fonts do not have serifs, which can frequently make them easier to read.</p>
+							<p>Let's go back up.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Tables</h3>
+						<img src="images/table-example.png" alt="example table formatted with both row header and column header">
+
+						<aside class="notes">
+							<p>Tables should only be used for information and data that should be presented in a tabular format. Meaning that you should not use tables for layout purposes. If for example, you need your content in columns, use the columns function.</p>
+							<p>Do make proper use of header columns and/or rows.</p>
+							<p>If your table is quite complex, provide a summary.</p>
+							<p>When creating tables in document applications, such as Word, use the table creation tool (if one is available) and ensure tables have headers assigned. If you export to PDF or paste the table into an online editor, you may need to further edit a table to make it properly accessible.</p>
+						</aside>
+					</section>
+					<section>
+						<h4>Basic Tables in HTML</h4>
+						<ul>
+							<li class="fragment">&lt;table&gt;</li>
+							<li class="fragment">&lt;tr&gt; = table row</li>
+							<li class="fragment">&lt;th&gt; = table header</li>
+							<li class="fragment">&lt;td&gt; = table cell</li>
+						</ul>
+						<pre class="fragment"><code data-trim class="html">
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Date&lt;/th&gt;
+    &lt;td&gt;February 5&lt;/th&gt;
+    //more dates
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Time&lt;/th&gt;
+    &lt;td&gt;1pm&lt;/th&gt;
+    //more times
+  &lt;/tr&gt;
+  // more rows with data
+&lt;/table&gt;
+						</code></pre>
+
+						<aside class="notes">
+							<p>Just to give you an idea of how it works in HTML, tables have four main elements. The table tag tells the browser this is a table. TR says this is a table row, TH that it is a table cell that is also a table header, and finally, TD which says it is a table cell. You may see the use of other tags within a table, which are necessary for more complex tables, but we'll stick with a basic example here.</p>
+							<p>So a basic table might look something like this. We start with an opening table tag, then the first row. Inside the first row, we have 2 table headers: date and time. In the second row, we specify our data, and then we would have more rows similar to this to list all the data. Finally, we close the table at the end.</p>
+							<p>Please note that this is the structure when the table headers are all in the leftmost column. If your headers are all in the top row, then the headers would all be in the first row instead.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h3>Links</h3>
+					<p class="fragment"><a href="http://www.pitt.edu">Click here</a> <br>vs. <br><a href="http://www.pitt.edu">University of Pittsburgh</a></p>
+
+					<aside class="notes">
+						<p>Links, such a common thing, so it's simple, but important. The text for every link should be descriptive and generally, unique within a single page. Imagine there was no other text around it except the title of the page, would you understand what that link is for? If you can’t do it yourself, don’t expect others to.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Math</h3>
+					<p class="fragment">Simple Arithmetic: 2 + 3 = 5</p>
+					<p class="fragment">MathML</p>
+
+					<aside class="notes">
+						<p>Just a quick note here. If you ever deal with equations, especially in mathematics, simple arithmetic can be done by typing it out and making sure there are spaces between the numbers and symbols. Otherwise, for more anything more complex, you will want to use MathML.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Media</h3>
+
+					<aside class="notes">
+						<p>Let’s talk about media.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h4>Images</h4>
+						<p>Alternative Text: alt=""</p>
+
+						<aside class="notes">
+							<p>When you include images, you also need to include alternate or alt text, which allows you to include descriptive information about the image. While the text is not visible to most users, assistive technologies will read the alternate text as a description of the image, so write concisely, while still providing an accurate description of the image.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="https://farm1.staticflickr.com/73/218593298_1a157aefcd_o.jpg" alt="red panda">
+						<cite>griangrafanna. (2006). Red Panda Pensive. <a href="https://www.flickr.com/photos/rh_photographic_art/12831639683/">https://www.flickr.com/photos/rh_photographic_art/12831639683/</a> <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a></cite>
+
+						<aside class="notes">
+							<p>The important point is that your description should be what the image is trying to convey. A picture of a red panda in an English class might describe facial expression and possible emotion, but that same picture in a Biology class might focus on size and coat colour to determine age, gender, or health.</p>
+						</aside>
+					</section>
+					<section>
+						<h5>Inserting Images in Word</h5>
+						<img src="http://webaim.org/techniques/word/media/image2010.jpg" alt="choosing the format picture option in Word" class="fragment">
+						<img src="http://webaim.org/techniques/word/media/alttext2010.jpg" alt="put alt text in description not title field" class="fragment">
+						<cite class="fragment">WebAIM. (2014). Microsoft Word. <a href="http://webaim.org/techniques/word/">http://webaim.org/techniques/word/</a> <br>&copy; WebAIM. Used under full credit, at no cost allowance as per the <a href="http://webaim.org/copyright">WebAIM Copyright &amp; Terms of Use</a>.</cite>
+
+						<aside class="notes">
+							<p>In Word, you would right click on the image, then choose to “Format picture”. Then, in the alt text section, you would fill in the description. You can include a very brief description in the title field, but WebAIM suggests it as being optional.</p>
+						</aside>
+					</section>
+					<section>
+						<h5>Inserting Images in WordPress</h5>
+						<img src="images/wp-image-metadata.png" alt="image information editor box in WordPress">
+
+						<aside class="notes">
+							<p>Many online systems will have a field box for you to enter the alt text when you are inserting the image rather than having to do it afterwards.</p>
+							<p>Alternatively, you can give your image a descriptive caption, which everyone will see, in which case, you can leave the alt text blank.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="http://www.4syllables.com.au/wp-content/uploads/2010/12/decision-tree1.png" alt="alt text decision flow chart">
+						<cite>MrShuffleupagus. (2014). This is a picture I took of a friend's dog, Spike, and the face he makes whenever he's confused. <a href="http://www.4syllables.com.au/2010/12/text-alternatives-decision-tree/">http://www.4syllables.com.au/2010/12/text-alternatives-decision-tree/</a></cite>
+
+						<aside class="notes">
+							<p>Similarly, if your image has been included for purely decorative purposes or is itself an alternate to a textual explanation, you should leave the alternate text empty.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/graph-example.png" alt="bar graph example">
+
+						<aside class="notes">
+							<p>If you need to use colours for figures, such as graphs, consider very different, high contrast colours. You can also use a mix of colour and patterns. Just imagine if you printed your document using a black and white printer. Would you still be able to properly understand your coloured figures? Try to also have the data in table format if possible.</p>
+							<p>Also, avoid creating images of text if possible.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h4>Audio</h4>
+						<p class="fragment">Woman: You should give an example.<br>
+							Man: Very well. (clears throat) This is the best example I can think of.</p>
+
+						<aside class="notes">
+							<p>All non-text content, including audio and visual materials should have an alternate, usually, text version. The suggested method for audio is a text transcript.</p>
+						</aside>
+					</section>
+					<section>
+						<h4>Video with Captions Example</h4>
+						<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/YTR21os8gTA?rel=0" frameborder="0" allowfullscreen></iframe>
+						<cite>LabofOrnithology. (2012). Birds-of-Paradise Project Introduction. <a href="https://www.youtube.com/watch?v=YTR21os8gTA">https://www.youtube.com/watch?v=YTR21os8gTA</a></cite>
+
+						<aside class="notes">
+							<p>For video, captions are recommended.</p>
+							<p>Let's take a look at this example. I'll just turn on the closed captions, and hopefully you can see what I'm seeing.</p>
+							<p>In general, text transcripts and captions are also very useful for non-auditory learners and for those whose English is not their first language. Using these two methods should cover your whole audience.</p>
+						</aside>
+					</section>
+					<section>
+						<h4>Descriptive Video Example</h4>
+						<iframe width="853" height="480" src="//www.youtube-nocookie.com/embed/PCZqKxQME6o?rel=0" frameborder="0" allowfullscreen></iframe>
+						<cite>Electrox3d. (2011). Star Wars for Blind People (Blu-ray audio track): description of a Jawa shooting R2!. <a href="http://www.youtube.com/watch?v=PCZqKxQME6o">http://www.youtube.com/watch?v=PCZqKxQME6o</a></cite>
+
+						<aside class="notes">
+							<p>There is also the option of descriptive audio. For those who are not familiar with descriptive audio, it is an additional audio track that is added to a video to describe what is happening. Here is an example: ...</p>
+							<p>Transcript: Suddenly, a hooded figure springs out and zaps R2 with a gun. R2 stops dead in his tracks, his metal body crawling with electrical current. His lights go out and he keels forward.</p>
+							<p>While descriptive audio is ideal for visually impaired people watching videos, it is generally very costly to make, so it is not usually offered unless it has already been produced.</p>
+							<p>Alternatively, sometime you will find the description included in the transcript or an alternate version of the captions. You would then simply have two options for captions for people to choose from: one with and one without descriptions.</p>
+						</aside>
+					</section>
+					<section>
+						<h4>Resource</h4>
+						<p class="fragment"><a href="http://accessibility.psu.edu/video">Penn State’s Video Captions and Audio Transcripts Guide</a></p>
+
+						<aside class="notes">
+							<p>Much like images, if the audio/video is actually an alternate to text, such as in a tutorial where an explanation is already fully explained in text form, then no alternative is required.</p>
+							<p>Also make sure that your audio and video do not autoplay. Anything longer than 3 seconds should also have controls to pause and play. However, these should be built into the system you are using for the most part.</p>
+							<p>Avoid animations, flashing, or very fast changes. Anything that flashes 3 times in any one second period can cause epileptic reactions.</p>
+							<p>If you would like to learn more about captions and transcripts, Penn State’s Video Captions and Audio Transcripts Guide is a good place to start.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h3>Media Summarized</h3>
+					<ul>
+						<li class="fragment">Images: alt text</li>
+						<li class="fragment">Audio: transcript</li>
+						<li class="fragment">Video: transcript, captions, descriptive audio</li>
+					</ul>
+
+					<aside class="notes">
+						<p>So, to summarize, alt text for images, transcripts for audio, and transcripts or captions for video or video with a descriptive audio track if it happens to be available.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Creating Documents</h2>
+					<img src="images/paste-from-word-example.png" alt="example paste from word icon in editor bar" class="fragment">
+
+					<aside class="notes">
+						<p>One of the most common difficulties with documents is how accessible they are.</p>
+						<p>When in an online environment, if you can put the information online in text format, that is a lot better than having people open a separate document. This allows people to avoid having another program open.</p>
+						<p>Many systems even have a “Paste from Word” option, which will keep much of the formatting when copying from Word, but remove all the extra invisible code that is specific to Word that may cause problems viewing or editing content. Some, such as WordPress, will do it automatically.</p>
+						<p>If you have to post documents, consider following the same guidelines we have covered and export or save as PDF, then post a link to the PDF.</p>
+						<p>For lecture notes, it’s a good idea to post the PowerPoint with notes in the notes sections.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Assessing Accessibility of Content</h2>
+
+						<aside class="notes">
+							<p>After creating your content, you will want to check it whether it's accessible. Luckily, many of the authoring tools we use come with accessibility checkers built-in.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Checking Accessibility in Microsoft Office</h3>
+						<img src="http://webaim.org/techniques/word/media/checker.jpg" alt="in Word, go to Info, check for issues, check accessibility" class="fragment">
+						<img src="http://webaim.org/techniques/powerpoint/media/checker.jpg" alt="in PowerPoint, go to Info, check for issues, check accessibility" class="fragment">
+						<cite class="fragment">WebAIM. (2014). Microsoft Word. <a href="http://webaim.org/techniques/word/">http://webaim.org/techniques/word/</a> <br>&copy; WebAIM. Used under full credit, at no cost allowance as per the <a href="http://webaim.org/copyright">WebAIM Copyright &amp; Terms of Use</a>.</cite>
+						<cite class="fragment">WebAIM. (2014). PowerPoint Accessibility. <a href="http://webaim.org/techniques/powerpoint/">http://webaim.org/techniques/powerpoint/</a> <br>&copy; WebAIM. Used under full credit, at no cost allowance as per the <a href="http://webaim.org/copyright">WebAIM Copyright &amp; Terms of Use</a>.</cite>
+
+						<aside class="notes">
+							<p>In Word, under the File tab, there is an option to "Check Accessibility". The program will check the accessibility of your document, such as whether you have filled in alt text for images, and walk you through correcting possible issues.</p>
+							<p>PowerPoint has the same functionality built in as well.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>PDF Accessibility</h3>
+						<img src="http://webaim.org/techniques/acrobat/media/Word%202010_1.gif" alt="in Word, go to File, Save as Adobe PDF if available" class="fragment">
+						<cite class="fragment">WebAIM. (2014). PDF Accessibility: Converting Documents to PDF. <a href="http://webaim.org/techniques/acrobat/converting">http://webaim.org/techniques/acrobat/converting</a> <br>&copy; WebAIM. Used under full credit, at no cost allowance as per the <a href="http://webaim.org/copyright">WebAIM Copyright &amp; Terms of Use</a>.</cite>
+
+						<aside class="notes">
+							<p>The best way to ensure the accessibility of a PDF you create is to follow the guidelines for creating documents and exporting to PDF. If you have the Adobe plugin, it is best to use that option, otherwise, the built-in “Save as” or “Export” to PDF will work. For more details on what settings to use when exporting, check out the WebAIM Converting Documents to PDF article.</p>
+							<p>Adobe Acrobat also has an accessibility checker, and a "Make Accessible" wizard, which will help automate part of the process and guide you through fixing any issue.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Basic PDF Text-Readability</h3>
+						<img src="https://cynng.files.wordpress.com/2013/08/pdf-selected.png" alt="PDf page with some text highlighted" class="fragment">
+
+						<aside class="notes">
+							<p>What about the cases where you didn’t make the PDF? You might be posting someone else’s document, such as a copy of a journal article. While you can use the “Accessibility Checker” in Adobe Acrobat if you have it, it can be a lot of work to correct all the possible issues. You may also be in a situation where you do not have Acrobat handy.</p>
+							<p>At the most basic, check that the PDF is text-readable. The easiest way to check is to try selecting text and copy/pasting it elsewhere. Did you get text? Is the text understandable? If the answer is no, the PDF should be run through OCR. Acrobat has this feature built-in, but there are many other options.</p>
+							<p>You will still want to have the DRS improve the accessibility of the PDF beyond basic text readability, but if someone needs the document right away and it’s short, it might be enough.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Need Help? Just Ask</h2>
+					<ul>
+						<li class="fragment"><a href="http://www.studentaffairs.pitt.edu/drsinstructor">DRS’ Information for Instructors</a></li>
+						<li class="fragment"><a href="http://www.cidde.pitt.edu/accessibility/">CIDDE's Accessibility Resources for Faculty</a></li>
+						<li class="fragment"><a href="http://www.etskb-fac.cidde.pitt.edu/blackboard/accessibility-guidelines/">Faculty Knowledge Base's Accessibility Guidelines for Blackboard</a></li>
+						<li class="fragment"><a href="http://www.online.pitt.edu/faculty/documents/PittOnlineAccessibilityBestPractices.pdf">PittOnline Top 10 Best Practices</a></li>
+						<li class="fragment"><a href="http://webaim.org/articles/">WebAIM Articles</a> includes making accessible Word, PDF, PowerPoint content, and converting to PDF</li>
+					</ul>
+
+					<aside class="notes">
+						<p>If you’re not sure or stuck on making your content accessible, contact the disability resources and services (DRS). Along with policies, and process, one of their services is to help make accessible versions of documents, books, and other material. The CIDDE along with support, and resources, also offers help with captioning media.</p>
+						<p>Here are also a few more resources that might help...</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Accessibility Statement</h2>
+						<blockquote class="fragment">If you have a disability for which you are or may be requesting an accommodation, you are encouraged to contact both your instructor and Disability Resources and Services (DRS), 140 William Pitt Union, (412) 648-7890, drsrecep@pitt.edu, (412)228-5347 for P3 ASL users, as early as possible in the term. DRS will verify your disability and determine reasonable accommodations for this course. <p class="quoted">- CIDDE</p></blockquote>
+						<cite>Center for Instructional Development &amp; Distance Education, University of Pittsburgh. (2015). Accessibility Resources For Faculty. <a href="http://www.cidde.pitt.edu/accessibility/">http://www.cidde.pitt.edu/accessibility/</a></cite>
+
+						<aside class="notes">
+							<p>You’ve made the effort to create accessible content, but what if you forgot something? </p>
+							<p>One of the great ways to be transparent and show your efforts in supporting equitable access is to have an accessibility statement.</p>
+							<p>It doesn’t need to be long, but simply a statement to say you’ve made the effort and who to contact if someone has any concerns</p>
+							<p>The CIDDE recommends faculty to put this statement on their course syllabi. ...</p>
+							<p>If you want to include something on a department or personal website, you can always post a modified version of this. You can, of course, also include more details about what people can expect or not.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Examples</h3>
+						<ul>
+							<li class="fragment"><a href="http://www.libraries.psu.edu/psul/about/webaccesspolicy.html">Penn State University Libraries Web Accessibility Statement</a></li>
+							<li class="fragment"><a href="http://www.torontopubliclibrary.ca/terms-of-use/library-policies/accessibility-people-disabilities.jsp">Toronto Public Library Accessibility Policy</a></li>
+							<li class="fragment"><a href="http://www.ox.ac.uk/accessibility">University of Oxford Accessibility Statement</a></li>
+						</ul>
+
+						<aside class="notes">
+							<p>It’s really up to you what you include in the statement and how detailed it is. For ideas and examples, check out: ...</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Take Away</h2>
+
+					<aside class="notes">
+						<p>Alright, I know that was a lot of information, so if you missed any of that, don’t worry, my slides will be posted and the recording will be available for you to review.</p>
+						<p>Hopefully you have enough resources now to make your online content accessible. If you’re stuck, remember, just ask those around you, or ask questions of disability services, CIDDE, or technology support staff. You’re not alone in dealing with these issues or in supporting students.</p>
+					</aside>
+				</section>
+
+				<section>
+					<blockquote>The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect. <p class="quoted">- Tim Berners-Lee @timbernerslee</p></blockquote>
+					<cite>City of Calgary. (2010). Universal Design Handbook. <a href="http://www.calgary.ca/CSPS/CNS/Pages/Publications-guides-and-directories/Universal-Design-Handbook.aspx">http://www.calgary.ca/CSPS/CNS/Pages/Publications-guides-and-directories/Universal-Design-Handbook.aspx</a></cite>
+
+					<aside class="notes">
+						<p>If you only take away one thing from today, remember that your efforts in making your content accessible can help many others, not just those that are disabled.</p>
+						<p>So, let’s build services that everyone can use.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<div class="contact">
+						<h3>Contact</h3>
+						<img src="images/nodoka-transparent.png" alt="nodoka holding a stack of books">
+						<ul>
+							<li>Cynthia Ng</li>
+							<li>@TheRealArty</li>
+							<li><a href="http://about.me/cynthiang">about.me/cynthiang</a></li>
+						</ul>
+					</div>
+
+					<aside class="notes">
+						<p>Thank you.</p>
+					</aside>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
