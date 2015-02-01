@@ -188,8 +188,8 @@
 							<ul>
 								<li>reflect institutional mission, leadership, and values,</li>
 								<li>serve all users, - not just those with disabilities, and I’ll talk more about this</li>
-								<li>make sound fiscal policy, - since it improves efficiency and reduces costs while maintaining quality, avoids retrofitting, inequitable solutions, litigation; frequently fulfills grant/contract requirements - and</li>
-								<li>add value to the institution. - because you have a better website, it benefits more people (e.g. captions to help people with varying language skills), loads more quickly in browsers, requires less bandwidth, is easier to maintain and update, tends to have a higher return in search engines, and higher compatibility with various software and hardware.</li>
+								<li>make sound fiscal policy, - since it improves efficiency and reduces costs while maintaining quality, avoids retrofitting, avoids inequitable solutions, avoids litigation; frequently fulfills grant/contract requirements - and</li>
+								<li>add value to the institution. - because you have better content, it benefits more people (e.g. captions help people with varying language skills), easier to maintain and update, and higher compatibility with various software and hardware.</li>
 							</ul>
 						</aside>
 					</section>
@@ -225,7 +225,7 @@
 						<cite>Quesenbery, W. (2009). Usable Accessibility: Making Web Sites Work Well for People with Disabilities. UX Matters. <a href="http://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php">http://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php</a></cite>
 
 						<aside class="notes">
-							<p>Just because something is accessible does not mean it’s usable, but first...</p>
+							<p>... Just because something is accessible does not mean it’s usable, but first</p>
 						</aside>
 					</section>
 				</section>
@@ -250,7 +250,7 @@
 						</ul>
 
 						<aside class="notes">
-							<p>Say as part of your approach, you want to make sure your service is accessible to all assistive technology. You start with ‘screen readers’ on your list,  and do some searching and start adding, other ‘text-to-speech’ software, ‘screen magnifiers’, ‘joysticks’, what about ‘mobile devices’ with the added accessibility features? What about ‘keyboards’ for keyboard accessibility?</p>
+							<p>Say as part of your approach, you want to make sure your content is accessible to all assistive technology. You start with ‘screen readers’ on your list,  and do some searching and start adding, other ‘text-to-speech’ software, ‘screen magnifiers’, ‘joysticks’, what about ‘mobile devices’ with the added accessibility features? What about ‘keyboards’ for keyboard accessibility?</p>
 							<p>Is there anyone who doesn’t use a keyboard or touch screen regularly?</p>
 							<p>At this point, you might realize that</p>
 						</aside>
@@ -338,7 +338,7 @@
 						<h2>Content Guidelines</h2>
 
 						<aside class="notes">
-							<p>Regardless of whether you’re creating your content in an online system, such as Blackboard, or document editing software, such as Microsoft Word, there are a few simple guidelines you can follow to make your content much more accessible.</p>
+							<p>Regardless of whether you’re creating your content in an online system, such as Blackboard, or document editing software, such as Microsoft Word, there are a few simple guidelines you can follow to make your content more accessible.</p>
 						</aside>
 					</section>
 					<section>
@@ -351,7 +351,8 @@
 
 						<aside class="notes">
 							<p>Let's start with some general writing tips: first, use consistent language. For example, if students are given optional readings, do not use "Additional Readings" in one place and then "Optional Readings" in another. Try to be consistent across all your writing across courses, webpages, even print documents.</p>
-							<p>Next, write out acronyms the first time you use them. And when writing, be clear and concise.</p>
+							<p>Next, write out acronyms the first time you use them.</p>
+							<p>And when writing, be clear and concise.</p>
 							<p>That's it. Well, okay, not really, but those really are the only ones that are specific to writing style or the use of words. All the other guidelines I will cover are more about structuring or marking up content.</p>
 						</aside>
 					</section>
@@ -462,8 +463,8 @@
 
 						<aside class="notes">
 							<p>Just to give you an idea of how it works in HTML, tables have four main elements. The table tag tells the browser this is a table. TR says this is a table row, TH that it is a table cell that is also a table header, and finally, TD which says it is a table cell. You may see the use of other tags within a table, which are necessary for more complex tables, but we'll stick with a basic example here.</p>
-							<p>So a basic table might look something like this. We start with an opening table tag, then the first row. Inside the first row, we have 2 table headers: date and time. In the second row, we specify our data, and then we would have more rows similar to this to list all the data. Finally, we close the table at the end.</p>
-							<p>Please note that this is the structure when the table headers are all in the leftmost column. If your headers are all in the top row, then the headers would all be in the first row instead.</p>
+							<p>So a basic table might look something like this. We start with an opening table tag, then the first row. Inside the first row, we have a row header followed by the data. Similarly, in the second row, we specify our row header and data, and then we would have more rows similar to this to list all the headers and data. Finally, we close the table at the end.</p>
+							<p>Please note that this is the structure when the table headers are all in the leftmost column. If you have column headers all in the top row, then the headers would all be listed in the first row instead.</p>
 						</aside>
 					</section>
 				</section>
@@ -480,10 +481,10 @@
 				<section>
 					<h3>Math</h3>
 					<p class="fragment">Simple Arithmetic: 2 + 3 = 5</p>
-					<p class="fragment">MathML</p>
+					<p class="fragment">Complex: MathML</p>
 
 					<aside class="notes">
-						<p>Just a quick note here. If you ever deal with equations, especially in mathematics, simple arithmetic can be done by typing it out and making sure there are spaces between the numbers and symbols. Otherwise, for more anything more complex, you will want to use MathML.</p>
+						<p>Just a quick note here. If you ever deal with equations, especially in mathematics, simple arithmetic can be done by typing it out and making sure there are spaces between the numbers and symbols. Otherwise, for anything more complex, you will want to use MathML.</p>
 					</aside>
 				</section>
 
@@ -583,13 +584,27 @@
 						</aside>
 					</section>
 					<section>
+						<h4>More on Audio/Video</h4>
+						<ul>
+							<li class="fragment">Text Alternate not needed if already explained in text.</li>
+							<li class="fragment">No autoplay</li>
+							<li class="fragment">Have controls</li>
+							<li class="fragment">Avoid flashing</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Much like images, if the audio/video is actually an alternate to text, such as in a tutorial where an explanation is already fully explained in text form, then no alternative is required.</p>
+							<p>Also make sure that your audio and video do not autoplay.</p>
+							<p>Anything longer than 3 seconds should also have controls to pause and play. However, these should be built into the system you are using for the most part.</p>
+							<p>Avoid flashing, or very fast animations and changes. Anything that flashes 3 times in any one second period can cause epileptic reactions.</p>
+							<p>If you would like to learn more about captions and transcripts, Penn State’s Video Captions and Audio Transcripts Guide is a good place to start.</p>
+						</aside>
+					</section>
+					<section>
 						<h4>Resource</h4>
 						<p class="fragment"><a href="http://accessibility.psu.edu/video">Penn State’s Video Captions and Audio Transcripts Guide</a></p>
 
 						<aside class="notes">
-							<p>Much like images, if the audio/video is actually an alternate to text, such as in a tutorial where an explanation is already fully explained in text form, then no alternative is required.</p>
-							<p>Also make sure that your audio and video do not autoplay. Anything longer than 3 seconds should also have controls to pause and play. However, these should be built into the system you are using for the most part.</p>
-							<p>Avoid animations, flashing, or very fast changes. Anything that flashes 3 times in any one second period can cause epileptic reactions.</p>
 							<p>If you would like to learn more about captions and transcripts, Penn State’s Video Captions and Audio Transcripts Guide is a good place to start.</p>
 						</aside>
 					</section>
@@ -615,8 +630,8 @@
 					<aside class="notes">
 						<p>One of the most common difficulties with documents is how accessible they are.</p>
 						<p>When in an online environment, if you can put the information online in text format, that is a lot better than having people open a separate document. This allows people to avoid having another program open.</p>
-						<p>Many systems even have a “Paste from Word” option, which will keep much of the formatting when copying from Word, but remove all the extra invisible code that is specific to Word that may cause problems viewing or editing content. Some, such as WordPress, will do it automatically.</p>
-						<p>If you have to post documents, consider following the same guidelines we have covered and export or save as PDF, then post a link to the PDF.</p>
+						<p>Many systems even have a “Paste from Word” option, which will keep much of the formatting when copying from Word, but remove all the extra invisible code that is specific to Word that may cause problems viewing or editing content. In some editors, such as WordPress, there is no special paste from Word button but will do the same process automatically.</p>
+						<p>If you have to post documents, consider following the same guidelines we have covered before posting.</p>
 						<p>For lecture notes, it’s a good idea to post the PowerPoint with notes in the notes sections.</p>
 					</aside>
 				</section>
@@ -626,7 +641,7 @@
 						<h2>Assessing Accessibility of Content</h2>
 
 						<aside class="notes">
-							<p>After creating your content, you will want to check it whether it's accessible. Luckily, many of the authoring tools we use come with accessibility checkers built-in.</p>
+							<p>After creating your content, you will want to check whether it's accessible. Luckily, many of the authoring tools we use come with accessibility checkers built-in.</p>
 						</aside>
 					</section>
 					<section>
@@ -676,7 +691,7 @@
 							<ul>
 								<li>WAVE - online web accessibility evaluation tool, of which there is a Firefox plugin version. The online tool allows you to give it a webpage address, but the advantage of the browser plugin is that it can give you different views of the webpage you're looking at, including pages where you need a login. The views include seeing text-only, or outline view, showing only headers.</li>
 								<li>Color Filter - will simulate what a webpage looks like to people with different types of colourblindness.</li>
-								<li>Similarly, Vischeck will allow you to upload images or allow you to enter a web address to simulated colour blindness.</li>
+								<li>Similarly, Vischeck will allow you to upload images or allow you to enter a web address to simulate colour blindness.</li>
 								<li>There are also a number of colour contrast checkers as well, which will check the contrast ratio between your text and the background colour on a webpage.</li>
 								<li>These are only a few examples. You can take a look at the w3c tools list for more, including screen emulators, and more code-based accessibility checkers.</li>
 							</ul>
@@ -712,7 +727,7 @@
 							<p>One of the great ways to be transparent and show your efforts in supporting equitable access is to have an accessibility statement.</p>
 							<p>It doesn’t need to be long, but simply a statement to say you’ve made the effort and who to contact if someone has any concerns</p>
 							<p>The CIDDE recommends faculty to put this statement on their course syllabi. ...</p>
-							<p>If you want to include something on a department or personal website, you can always post a modified version of this. You can, of course, also include more details about what people can expect or not.</p>
+							<p>If you want to include something on a department or individual website, you can always post a modified version of this. You can, of course, also include more details about what people can expect or not.</p>
 						</aside>
 					</section>
 					<section>
@@ -744,7 +759,7 @@
 
 					<aside class="notes">
 						<p>If you only take away one thing from today, remember that your efforts in making your content accessible can help many others, not just those that are disabled.</p>
-						<p>So, let’s build services that everyone can use.</p>
+						<p>So, let’s create content that everyone can use.</p>
 					</aside>
 				</section>
 
