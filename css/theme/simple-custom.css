@@ -84,3 +84,24 @@ body {
   display:inline-block;
   vertical-align: middle;
 }
+
+/* CODE BLOCK */
+.reveal pre code {
+  max-height: 500px;
+}
+
+/* TABLE */
+.reveal table,
+.reveal table th,
+.reveal table td {
+  border: 1px solid black;
+  border-collapse:collapse;
+}
+.reveal table th {
+  text-align: center;
+}
+
+.reveal table th,
+.reveal table td {
+  padding:0.5em;
+}

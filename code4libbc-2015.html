@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Semi-Automating Batch Editing MARC Records : Using MarcEdit</title>
+
+		<meta name="description" content="Presentation on Semi-Automating Batch Editing MARC Records : Using MarcEdit at Code4LibBC 2015.">
+		<meta name="author" content="Cynthia &quote;Arty&quote; Ng">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple-custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Semi-Automating Batch Editing MARC Records : Using MarcEdit</h1>
+					<p>
+							<a href="http://about.me/cynthiang">Cynthia Ng</a><br>
+							<a href="http://twitter.com/TheRealArty">@TheRealArty</a><br>
+							November 26, 2015
+					</p>
+					<aside class="notes">
+						<p>I've been hearing for quite some time that people struggle with vendor records, not least of all because making changes can be very time consuming. I'd like to present one possible method to help not only to fix vendor records, but to do it in a semi-automated way.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>What do you want to do?</h2>
+
+					<aside class="notes">
+						<p>Let's say you have a set of vendor records. First, what do you want to do with them?</p>
+					</aside>
+				</section>
+				<section>
+					<h2>Choose the Tool</h2>
+					<ul>
+						<li class="fragment">MarcEdit</li>
+						<li class="fragment">PyMARC (Python)</li>
+						<li class="fragment">MARC::RECORD (Perl)</li>
+					</ul>
+
+					<aside class="notes">
+						<p>For the purpose of this presentation, MarcEdit is the tool of choice since it's commonly used and does not require knowledge of a programming language. Nevertheless, I'll be using MarcEdit as an example. There's no reason why you can't use what I'll be talking about with other tool. While I haven't tried using them myself, other recommended tools include: PyMARC and MARC::RECORD. These will be more extensible and would even allow proper automation, but may also have a steeper learning curve.</p>
+					</aside>
+				</section>
+				<section>
+					<h2>Operations</h2>
+					<ul>
+						<li class="fragment">add (sub)fields</li>
+						<li class="fragment">delete (sub)fields</li>
+						<li class="fragment">swap (sub)fields</li>
+						<li class="fragment">reorder (sub)fields</li>
+						<li class="fragment">find/replace (sub)fields data</li>
+						<li class="fragment">edit indicators</li>
+					</ul>
+
+					<aside class="notes">
+						<p>Before we can decide, let's figure out what operations are available to us. We can</p>
+						<ul>
+						<li>add (sub)fields</li>
+						<li>delete (sub)fields</li>
+						<li>swap (sub)fields</li>
+						<li>reorder (sub)fields</li>
+						<li>find/replace (sub)fields data</li>
+						<li>edit indicators</li>
+						</ul>
+						<p>All of these operations can also be done using a selection criteria.</p>
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h2>Deciding Tasks</h2>
+
+						<aside class="notes">
+							<p>Let's take a sample MARC record of a print book.</p>
+						</aside>
+					</section>
+					<section>
+						<pre><code data-trim>=LDR  01249cam a22003857i 4500
+=001  39952
+=005  20150925220242.0
+=008  150501t20152015oncb\\\\\\\\\\000\1\eng\\
+=010  \\$a  2014455313
+=020  \\$a9781552453056 (pbk.)
+=035  \\$a(OCoLC)ocn897352758
+=050  00$aPR9199.3.A365$bF53 2015
+=082  04$aC813/.54$223
+=100  1\$aAlexis, André,$d1957-$eauthor.
+=245  10$aFifteen dogs :$ban apologue /$cAndré Alexis.
+=250  \\$aFirst edition.
+=264  \1$aToronto :$bCoach House Books,$c2015
+=300  \\$a171 pages :$bmaps ;$c21 cm
+=650  \0$aDogs$vFiction$aAnimal intelligence$vFiction$aAllegories.
+=650  \0$aIntellect$vFiction.
+=650  \0$aConsciousness in animals$vFiction.
+=901  \\$a39952$b$c39952$tbiblio
+=906  \\$a7$bcbc$ccopycat$d3$encip$f20$gy-gencatlg
+=925  0\$aacquire$b1 shelf copy$xpolicy default
+=955  \\$bhc08 2015-05-01 z-processor$ihc08 2015-05-05 to BCCD
+						</code></pre>
+						<aside class="notes">
+							<p>We might want to delete all the local fields, for example, 901, 906, 025, 955.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/marcedit-swap.png" alt="Swap function in MarcEdit for 020a to 534z with add to existing/create new checked">
+
+						<aside class="notes">
+							<p>Another task might be to move information from one field to another. For example, we want to move ISBN from 020a to 534z. Using the swap function with the add to existing/create new checked, we can move each of the 020a into the same line of 534.</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Find: (\$a[^$]*)<br>
+						Replace: $+/r<br>
+						"Use Regular Expression" option checked</blockquote>
+						<cite>Source: <a href="http://blog.reeset.net/archives/1295">Regular Expression Recursive Replacement in MarcEdit</a></cite>
+
+						<aside class="notes">
+							<p>One more example. This example record erroneously has multiple subject headers on one line, so we need to separate them. Using the "Edit Field Data Function", we can: ... to move each subject header into its own line.</p>
+							<p>Of course, these are just some examples, what needs to be done will depend on the set of records you regularly work with.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Separating Tasks</h2>
+
+						<aside class="notes">
+							<p>Once you've decided on your tasks, you will want to separate them into multiple categories.</p>
+						</aside>
+					</section>
+					<section>
+						<table>
+							<tr>
+								<th>All Records</th>
+								<th>All Audio</th>
+								<th>Example Vendor</th>
+							</tr>
+							<tr>
+								<td>Delete 9xx fields</td>
+								<td>Move ISBN</td>
+								<td>Separate subject headers</td>
+							</tr>
+							<tr>
+								<td>Delete 09x fields</td>
+								<td>...</td>
+								<td>...</td>
+							</tr>
+						</table>
+
+						<aside class="notes">
+							<p>For example, deleting local fields is something you would always do, moving the ISBN information is only something you would do for audio records, and separating subject headers is only for a specific vendor. While you would always want to fix erroneously created subject headers, since you only tend to have these errors from specific sources, I suggest only applying these changes when necessary.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Automating Your Tasks</h2>
+
+						<aside class="notes">
+							<p>Before going ahead with this part of the process, you will obviously want to test each task you have decided on.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/marcedit-new-task.png" alt="icon of 10 people, one of which is coloured in">
+
+						<aside class="notes">
+							<p>Once you've done that, in MarcEdit, all you have to do is create an automated task and add individual tasks to it.</p>
+							<p>You'll want to make sure they are in order since it will process them from top to bottom.</p>
+							<p>Finally, test your automated tasks on your record sets or on some example records to make sure that everything worked properly.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/marcedit-task-report.png" alt="icon of 10 people, one of which is coloured in">
+
+						<aside class="notes">
+							<p>Everytime you run an automated task, it will provide you with a report of what it's done, though I have personally never found the report particularly useful. Instead, I tend to spot check that it seems to be working as expected.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Take Away</h2>
+
+					<aside class="notes">
+						<p>I know that what I'm doing will not fit everyone's situation, but hopefully it gives you ideas on how to make your record processing more efficient.</p>
+						<p>It's not a perfect process and your records won't be perfect, but the main idea is to save as much time as possible while making records meet your minimum standards.</p>
+						<p>I would love to hear what other people are doing and if they have ideas on how to do this sort of thing better. I believe we also have a breakout scheduled this afternoon for those interested in discussing this topic further.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<div class="contact">
+						<img src="images/nodoka-transparent.png" alt="nodoka holding a stack of books">
+						<ul>
+							<li>Cynthia Ng</li>
+							<li>@TheRealArty</li>
+							<li><a href="http://about.me/cynthiang">about.me/cynthiang</a></li>
+						</ul>
+					</div>
+
+					<aside class="notes">
+						<p>Thank you.</p>
+					</aside>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
