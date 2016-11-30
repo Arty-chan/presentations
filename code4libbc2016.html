@@ -14,20 +14,22 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 		<link rel="stylesheet" href="css/theme/simple-custom.css">
 
-		<!-- Theme used for syntax highlighting of code -->
+		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
 		</script>
 
 		<!--[if lt IE 9]>
@@ -42,7 +44,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Getting Things Done: Becoming More Efficient by Understanding and Analyzing Workflow</h1>
+					<h1>Getting Things Done: Discovering Efficiencies in Workflow</h1>
 					<p>
 							<a href="http://about.me/cynthiang">Cynthia Ng</a><br>
 							<a href="http://twitter.com/TheRealArty">@TheRealArty</a><br>
@@ -58,7 +60,6 @@
 
 					<aside class="notes">
 						<p></p>
-						<p></p>
 					</aside>
 				</section>
 
@@ -67,7 +68,7 @@
 						<h2>Task Analysis</h2>
 
 						<aside class="notes">
-							<p></p>
+							<p>Task analysis is a methodology used frequently in usability studies and as a user experience exercise. Depending on how a task analysis is done, it might include recording and analyzing task frequently, duration, and complexity. Frequently, a task is also broken down into multiple subtasks. While there are different ways of recording the information, frequently, how the task is completed is put into a form similar to a flowchart.</p>
 						</aside>
 					</section>
 					<section>
@@ -75,7 +76,7 @@
 						<cite>Reidsma, M. (2013). Slide 38. Websites are for People. <a href="http://matthew.reidsrow.com/articles/29">http://matthew.reidsrow.com/articles/29</a> <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a></cite>
 
 						<aside class="notes">
-							<p></p>
+							<p>This is a task analysis of how a user requests an interlibrary loan online through the website. The images you see are screenshots from the various pages a user sees while going through the request process, with arrows to show which screens the user will see depending on the decisions they make, and the rest are handwritten notes about the user’s process. Credit here goes to Matthew Reidsma at Grand Valley State University, who performed this task analysis and has since streamlined the process and improved the user experience around the online ILL process.</p>
 						</aside>
 					</section>
 				</section>
@@ -92,14 +93,14 @@
 						<img src="images/request-workflow.jpg" alt="flowchart example">
 
 						<aside class="notes">
-							<p></p>
+							<p>In a similar vein, you can of course, simply draw a flowchart based on your knowledge of how something is done, whether it’s a set process,</p>
 						</aside>
 					</section>
 					<section>
 						<img src="images/content_request_verification.jpg" alt="decision flowchart example">
 
 						<aside class="notes">
-							<p></p>
+							<p>or documenting how decisions are made.</p>
 						</aside>
 					</section>
 				</section>
@@ -109,14 +110,17 @@
 						<h2>Journey Sheet</h2>
 
 						<aside class="notes">
-							<p></p>
+							<p>Flowcharts and task analyses work well when you know and understand the whole process, but what happens when you don’t?</p>
+							<p>Honestly, I feel like there must be a term out there for using this method of collection information, but I haven’t found it, so I call them journey sheets.</p>
 						</aside>
 					</section>
 					<section>
 						<img src="images/book-journey-example.jpg" alt="example completed journey sheet">
 
 						<aside class="notes">
-							<p></p>
+							<p>The idea is that there is a sheet of paper that is passed along from one person to the next, and as they get it, they write down what they do. The paper itself has brief instructions and an example at the top, and the rest is space for people to fill in the information.</p>
+							<p>...</p>
+							<p>One of the reasons I decided to do it this way, was because I wanted to see how items moved through other departments, which was harder to find out, because a lot of different staff would potential handle the items after they left technical services.</p>
 						</aside>
 					</section>
 				</section>
@@ -124,15 +128,23 @@
 				<section>
 					<h2>Questions to Ask</h2>
 					<ul>
-						<li class="fragment">visual</li>
-						<li class="fragment">auditory</li>
-						<li class="fragment">physical/motor</li>
-						<li class="fragment">touch</li>
-						<li class="fragment">learning</li>
+						<li class="fragment">Does the order make sense?</li>
+						<li class="fragment">Which steps are flexible in the order? Conditional upon other steps being completed?</li>
+						<li class="fragment">Can specific steps be done more efficiently?</li>
+						<li class="fragment">How many people are involved? Can it be reduced?</li>
+						<li class="fragment">Is the most suitable person doing each step?</li>
+						<li class="fragment">Is the process consistent? Consistent with other departments?</li>
 					</ul>
 
 					<aside class="notes">
-						<p></p>
+					<ul>
+						<li>Does the order make sense?</li>
+						<li>Which steps are flexible in the order? Conditional upon other steps being completed?</li>
+						<li>Can specific steps be done more efficiently? (Is something done manually? Is there new technology that can help? Possibly automate part or all of it?)</li>
+						<li>How many people are involved? Can it be reduced?</li>
+						<li>Is the most suitable person doing each step?</li>
+						<li>Is the process consistent? Consistent with other departments?</li>
+					</ul>
 					</aside>
 				</section>
 
@@ -141,21 +153,23 @@
 						<h2>The Ideal</h2>
 
 						<aside class="notes">
-							<p></p>
+							<p>Based on the answer to these questions, consider drawing what you think would be the ideal workflow.</p>
 						</aside>
 					</section>
 					<section>
 						<img src="images/accessible-production-workflow.jpg" alt="example workflow">
 
 						<aside class="notes">
-							<p></p>
+							<p>You might even consider starting with the ideal before you analyze current processes so that you’re not unduly influenced by the current work environment.</p>
+							<p>To get to the ideal workflow, if you don’t have one in mind already, you might consider transferring the information to a format where you can rearrange each step. You might do this digitally in a document, spreadsheet, or flowchart software, or</p>
 						</aside>
 					</section>
 					<section>
 						<img src="images/workflow-sticky-notes.jpg" alt="sticky notes on a whiteboard">
 
 						<aside class="notes">
-							<p></p>
+							<p>using good old sticky notes, so that you can easily move them around.</p>
+							<p>You might then also build flowcharts representing intermediate steps to get from the current workflow to the ideal one.</p>
 						</aside>
 					</section>
 				</section>
@@ -164,7 +178,8 @@
 					<h2>Take Away</h2>
 
 					<aside class="notes">
-						<p></p>
+						<p>Okay, I know that none of that was rocket science, and might even be exercises you’ve done before, but hopefully if nothing else, it’s a reminder that we should not let ourselves become complacent. Just because the work is chugging along, doesn’t mean it can’t be done more efficiently, and more importantly, free up time to do other things.</p>
+						<p>I’d love to hear what other people have done with their own work, teams, or organizations, and if you have any questions, please ask.</p>
 					</aside>
 				</section>
 
