@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Write the Accessible Docs - Cynthia Ng</title>
+
+		<meta name="description" content="Write the Docs Portland 2017 lightning talk on creating accessible docs.">
+		<meta name="author" content="Cynthia &quote;Arty&quote; Ng">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple-custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Write the Accessible Docs</h1>
+					<p>
+							<a href="http://about.me/cynthiang">Cynthia Ng</a><br>
+							<a href="http://twitter.com/TheRealArty">@TheRealArty</a><br>
+					</p>
+					<aside class="notes">
+						<p>Introduction - Hi everyone, hope you're still awake</p>
+					</aside>
+				</section>
+				<section>
+					<img src="https://c1.staticflickr.com/3/2031/2207612388_ec2025ba6f_b.jpg" alt="">
+						<cite>Hunt, D. (2007). Koala sleeping. <a href="https://www.flickr.com/photos/undeleterious/2207612388/">https://www.flickr.com/photos/undeleterious/2207612388/</a> <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY NC ND 2.0</a></cite>
+
+					<aside class="notes">
+						<p>When talking about being accessible, I'm talking here about available and usable by people with disabilities, or in a broader sense, by as many of your users as possible.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Types of Disabilities</h2>
+					<ul>
+						<li class="fragment">visual</li>
+						<li class="fragment">auditory</li>
+						<li class="fragment">physical/motor</li>
+						<li class="fragment">touch</li>
+						<li class="fragment">learning</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>visual: other than blindness, this might also refer to people who have difficulty with judging distances and hand-eye coordination</li>
+							<li>auditory: other than deafness, this might also refer to other hearing issues, such as having difficulty focusing on a single voice</li>
+							<li>physical/motor: examples include not being able to grip something or problems with precise movements</li>
+							<li>touch: namely this refers to a lack of sensation with touch</li>
+							<li>learning: is a rather large umbrella term, but includes dyslexia and other reading disabilities, as well as dysphasia and related issues with writing</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Why Should You Care?</h2>
+
+						<aside class="notes">
+							<p>According to the US Census, 16.5% or almost 30 million adults have a disability.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Disability > Minority*</h3>
+						<cite>* Based on 2010 US census <a href="http://www.census.gov/prod/2012pubs/p70-131.pdf">percentage of total population with a disability</a>, and the <a href="http://www.census.gov/prod/cen2010/briefs/c2010br-02.pdf">percentage of total population of minorities.</a></cite>
+
+						<aside class="notes">
+							<p>This means that the number of people with a disability is larger than any one group of ethnic or visible minority in this country.</p>
+							<p>I'll also just mention that legislation might apply, but I'm not a legal expert and it can get complication, so I won't get into it here, but I will just mention that just because you're in a private company doesn't mean it doesn't apply to you.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Assistive Technology</h2>
+					<ul>
+						<li class="fragment">screen readers</li>
+						<li class="fragment">joysticks and other pointers</li>
+						<li class="fragment">keyboard only</li>
+						<li class="fragment">touch screens</li>
+						<li class="fragment">many more...</li>
+					</ul>
+
+					<aside class="notes">
+						<p>I ask that you consider any and all assistive technology, which may include:</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Colour Contrast: <br>Considering Colour Blindness</h2>
+
+					<aside class="notes">
+						<p>I'm glad someone already mentioned this yesterday. The main thing with colour contrast is to just make sure that colour is not the only way you are getting the message across. A great way to test for colour contrast is to see what it looks like in greyscale or black &amp; white.</p>
+					</aside>
+				</section>
+				<section>
+					<h2>Media</h2>
+
+					<aside class="notes">
+						<p>Anytime you have some kind of media, whether that be images, flowcharts, diagrams, audio, or video, you should have a text-based alternative.</p>
+						<p>Images typically have alt or alternate text, but for things like flowcharts and diagrams, you have a bulleted list, data table, or some other text depending on the image.</p>
+						<p>For audio and video, typically a text transcript is a good alternative. It's also helpful to have captions for your videos.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Interactivity</h2>
+
+					<aside class="notes">
+						<p>If you have any interactive elements: sliders, accordians, anything where you click on some element to reveal blocks of text or something similar. You want to visibly hide the text, but not from screen readers. Typically this involves using <a href="https://www.w3.org/WAI/tutorials/fundamentals/hiding/">absolute position and clip or positioning the block off screen</a>.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Guidelines</h2>
+					<ul>
+						<li class="fragment">Print guidelines: <a href="https://opentextbc.ca/accessibilitytoolkit/">BC Open Textbook Accessibility Toolkit</a></li>
+						<li class="fragment">Web guidelines<a href="https://www.w3.org/WAI/WCAG20/quickref/">Web Content Accessibility Guidelines (W3C)</a></li>
+					</ul>
+
+					<aside class="notes">
+						<p>I won't get into writing guidelines since I assume as technical writers, you're familiar with those. Instead, I've put up a couple of links as starting points for thinking more about accessibility in print and online.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Testing &amp; User Feedback</h2>
+
+					<aside class="notes">
+						<p>There are ways to automatically and programmatically test for accessibility, but nothing beats doing usability testing and getting user feedback. If you're doing this kind of work, I highly encourage and ask that you include people who have different types of disabilities and ways of reading.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Take Away: Follow Usability Guidelines</h2>
+					<ol>
+						<li class="fragment">clear</li>
+						<li class="fragment">helpful</li>
+						<li class="fragment">usable</li>
+						<li class="fragment">accessible</li>
+						<li class="fragment">easy to understand</li>
+						<li class="fragment">designed with people in mind first</li>
+					</ul>
+
+					<aside class="notes">
+						<p>In general, if you're following usability guidelines, you're doing great. This means that you want your docs to be:</p>
+						<p>...accessible, (in terms of both accessibility and simply making easy to access)...</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<div class="contact">
+						<h3>Contact</h3>
+						<img src="images/nodoka-transparent.png" alt="nodoka holding a stack of books">
+						<ul>
+							<li>Cynthia Ng</li>
+							<li>@TheRealArty</li>
+							<li><a href="http://about.me/cynthiang">about.me/cynthiang</a></li>
+						</ul>
+					</div>
+
+					<aside class="notes">
+						<p>Thank you.</p>
+					</aside>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
