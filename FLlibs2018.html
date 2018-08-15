@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Making Web Services Accessible for Everyone - Cynthia Ng</title>
+
+		<meta name="description" content="Florida Libraries Webinar August 2018 presentation on auditing web services for accessibility.">
+		<meta name="author" content="Cynthia &quote;Arty&quote; Ng">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple-custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Auditing Your Website for Accessibility Compliance and Understanding How ADA Applies</h1>
+					<p>
+							<a href="http://about.me/cynthiang">Cynthia Ng</a><br>
+							<a href="http://twitter.com/TheRealArty">@TheRealArty</a><br>
+							August 16, 2018
+					</p>
+					<aside class="notes">
+						<p>Introduction - Hi everyone, hope you’re having a good day...</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Brief Overview</h2>
+					<ul>
+						<li class="fragment">Policy &amp; Legislation</li>
+						<li class="fragment">Web Accessibility</li>
+						<li class="fragment">Types of Disabilities</li>
+						<li class="fragment">Assistive Technology</li>
+						<li class="fragment">WCAG</li>
+						<li class="fragment">Auditing Your Website</li>
+						<li class="fragment">Accessibility Statement</li>
+						<li class="fragment">Take Away</li>
+					</ul>
+
+					<aside class="notes">
+						<p>Just to give a brief overview of what we'll cover today. We'll start with likely what brought you here, which is the legislation regarding web accessibility, then look at what that means, the different types of disabilities...</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Policy &amp; Legislation</h2>
+
+						<aside class="notes">
+							<p>In the US, there are two Acts to consider. </p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>No otherwise qualified individual with a disability shall [...] be excluded from [...] any program or activity receiving Federal financial assistance. <p class="quoted">- Section 508</p></blockquote>
+						<cite>United States Department of Labor. (n.d.).  Section 504, The Rehabilitation Act of 1973. <a href="http://www.dol.gov/oasam/regs/statutes/sec504.htm">http://www.dol.gov/oasam/regs/statutes/sec504.htm</a></cite>
+
+						<aside class="notes">
+							<p>The Rehabilitation Act of 1973, includes this clause in Section 504 ...</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>[E]ach Federal department or agency [...] shall ensure [...] that the electronic and information technology allows [...] individuals with disabilities who are members of the public seeking information or services from a Federal department or agency to have access to and use of information and data that is comparable to the [...] public who are not individuals with disabilities. <p class="quoted">- Section 508, paragraph a-1-A-ii</p></blockquote>
+						<cite>United States Department of Labor. (n.d.).  Section 508, The Rehabilitation Act of 1973. <a href="http://www.dol.gov/oasam/regs/statutes/sec508.htm">http://www.dol.gov/oasam/regs/statutes/sec508.htm</a></cite>
+
+						<aside class="notes">
+							<p>Here I also mention Section 508 of the Rehabilitation Act because it governs the regulations that Federal departments must follow around technology, which states that... The specific guidelines laid out by the Federal government in relation to Section 508 is what many other organizations follow to ensure compliance with...</p>
+						</aside>
+					</section>
+					<section>
+						<h3>The Americans with Disabilities Act (1990)</h3>
+
+						<aside class="notes">
+							<p>The Americans with Disabilities Act provides civil rights to people with disabilities much like the Civil Rights Act would apply based on race or religion.</p>
+							<p>Many states, grants, and programs also have their own policies that may be similar or extend the list of requirements.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Florida</h3>
+						<p>Florida Association of Special Districts (FASD)</p>
+
+						<aside class="notes">
+							<p>Aside from the federal level, there may also be state, district, municipal. Of course, you're likely here today because of the letter from the FASD) on ADA Accessibility.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Summary: Policy &amp; Legislation</h3>
+						<ul>
+							<li class="fragment">The Rehabilitation Act (Section 504 and 508)</li>
+							<li class="fragment">Americans with Disabilities Act</li>
+							<li class="fragment">state, district, municipal legislation</li>
+							<li class="fragment">organizations, grants, etc.</li>
+						</ul>
+
+						<aside class="notes">
+							<p>So, to summarize. We have various levels of legilation and policy that determine the guidelines we must follow, and additionally, there may be policies at your particular organization or ones specific to projects, such as due to conditions from a grant.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>What is Web Accessibility?</h2>
+
+						<aside class="notes">
+							<p>While we've covered the legislation we need to be concerned about. We’re here today to talk about accessibility, but what <em>is</em> web accessibility?</p>
+							<p>One definition, and what seems to be the most common one is that</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Web accessibility means that people with disabilities can use the Web. <p class="quoted">- W3C Web Accessibility Initiative (WAI)</p></blockquote>
+						<cite>W3C Web Accessibility Initiative. (2005). What is Web Accessibility. <em>Introduction to Web Accessibility</em>. <a href="http://www.w3.org/WAI/intro/accessibility.php"><a href="http://www.w3.org/WAI/intro/accessibility.php">http://www.w3.org/WAI/intro/accessibility.php</a></a></cite>
+
+						<aside class="notes">
+							<p>Having established that, we might look at defining a disability. That’s actually a really hard task, but we can look at the different types of disabilities to get a better idea.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Types of Disabilities</h2>
+					<ul>
+						<li class="fragment">visual</li>
+						<li class="fragment">auditory</li>
+						<li class="fragment">physical/motor</li>
+						<li class="fragment">touch</li>
+						<li class="fragment">learning</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>visual: other than blindness, this might also refer to people who have difficulty with judging distances and hand-eye coordination</li>
+							<li>auditory: other than deafness, this might also refer to other hearing issues, such as having difficulty focusing on a single voice</li>
+							<li>physical/motor: examples include not being able to grip something or problems with precise movements</li>
+							<li>touch: namely this refers to a lack of sensation with touch</li>
+							<li>learning: is a rather large umbrella term, but includes dyslexia and other reading disabilities, as well as dysphasia and related issues with writing</li>
+						</ul>
+						<p>With all the different types of devices used to access websites, any one or a combination of these disabilities may apply to a user trying to access a website. </p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Assitive Technology</h2>
+					<ul>
+						<li class="fragment">screen readers</li>
+						<li class="fragment">text-to-speech, speech-to-text</li>
+						<li class="fragment">mouse alternatives (e.g. joysticks)</li>
+						<li class="fragment">screen magnifiers</li>
+						<li class="fragment">keyboard only</li>
+						<li class="fragment">touch screen</li>
+						<li class="fragment">and more</li>
+					</ul>
+
+					<aside class="notes">
+						<p>As you may have heard, there are many types of technology that can help users with disabilities with navigating the internet, which we call assistive technology. I'm sure you've heard of many of these before, but just to very quickly mention some of them. The one most commonly associated with assistive technology would be screen readers, but there are also... ; You'll notice that keyboards and touch screens are commonly used by those without disabilities as well, so one of the main benefits of improving web accessibility is improving the usability of your website for all users.</p>
+						<p>Okay, so now that we've covered the general concept, the people, and the legislation, let's look at the specifics on what guidelines to follow and how to apply them.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Web Content Accessibility Guidelines (WCAG)<br>by World Wide Web Consortium (W3C)</h2>
+						<ul>
+							<li class="fragment">2.0 (Dec 2008)</li>
+							<li class="fragment">2.1 (Jun 2018)</li>
+						</ul>
+
+						<aside class="notes">
+							<p>As I mentioned before, many organizations follow the guidelines set out by Section 508 and the Federal government. In 2017, the Federal government updated Section 508 to essentially use the Web Content Accessibility Guidelines aka WCAG 2.0 as its standard. Version 2 was originally released in Dec 2008. Recently, the World Wide Web Consortium (W3C) release version 2.1. 2.1 included some additional guidelines and guidance from W3C, especially around conformance. It is highly recommended to have websites and applications meet the new 2.1 guidelines, since 2.1 is backwards compatible with version 2, meaning that by meeting the 2.1 guidelines, you automatically meet the 2.0 guidelines.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Sections of WCAG</h3>
+						<ol>
+							<li class="fragment">Perceivable</li>
+							<li class="fragment">Operable</li>
+							<li class="fragment">Understandable</li>
+							<li class="fragment">Robust</li>
+							<li class="fragment">Conformance</li>
+						</ol>
+
+						<aside class="notes">
+							<p>Let's first take a look at the general structure of WCAG. Aside from the Introduction and the appendices, WCAG is broken down into 5 general sections.</p>
+							<ol>
+								<li>Perceivable means that the information is presented in such a way that users can observe or perceive the content</li>
+								<li>Operable means that users navigate to and interact with all components</li>
+								<li>Understandable means that the content can be understood by the user</li>
+								<li>Robust means that the content can be interpreted in various ways including assistive technology</li>
+								<li>Conformance elaborates on when you can claim you have met the guidelines and some suggestions on making an accessibility statement</li>
+							</ol>
+						</aside>
+					</section>
+					<section>
+						<h3>Some Notes on WCAG</h3>
+						<ul>
+							<li class="fragment">Level: A, AA, AAA</li>
+							<li class="fragment">Level AA recommended</li>
+							<li class="fragment"><a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG Quick Ref</a> makes life easier</li>
+							<li class="fragment">Elements and Guidelines Overlap</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Before we move on, I want to cover a few important points about WCAG.</p>
+							<ul>
+								<li>The first is that each guideline is classified by level with A being the basic and minimal level up to AAA with the strictest guidelines.</li>
+								<li>Legislation and other policies will sometimes ask you to meet Level A, but most including Section 508 require you to meet Level AA. I've never seen anyone requiring Level AAA, and it is often considered impractical, though not impossible.</li>
+								<li>When trying to view which guidelines are required for a specific level and their related techniques for success, try using the quick ref version of the WCAG document since you can filter out what you need.</li>
+								<li>One of the complex parts of understanding WCAG and how it applies when auditing your website is that elements on your website will almost always overlap with multiple guidelines.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Understanding WCAG</h3>
+						<ul>
+							<li class="fragment"><a href="https://floridalibrarywebinars.org/events/making-online-accessibility-easy-and-part-of-your-work/">Making Online Accessibility Easy and Part of Your Work</a> (Florida Libraries, May 2016)</li>
+							<li class="fragment"><a href="https://floridalibrarywebinars.org/making-web-services-accessible-for-everyone-ondemand/">Making Web Services Accessible for Everyone</a> (Florida Libraries, September 2016)</li>
+							<li class="fragment"><a href="http://dx.doi.org/10.3998/weave.12535642.0001.701">A Practical Guide to Improving Web Accessibility</a> (WeaveUX, Issue 7, October 2017)</li>
+							<li class="fragment"><a href="A Practical Starter Guide on Developing Accessible Websites">A Practical Starter Guide on Developing Accessible Websites</a> (Code4Lib Journal, Issue 37, July 2017)</li>
+							<li class="fragment"><a href="https://cynthiang.ca/tag/wcag/">WCAG Blog Post Series</a></li>
+						</ul>
+
+						<aside class="notes">
+							<p>Unfortunately, we have limited time for this session and web accessibility is a big topic. Since I will be focusing on how to audit a website for web accessibility, I will not actually be covering general techniques on creating accessible web content or websites. So I highly recommend taking a look at the webinars I've previously done, which cover online content including documents, and websites as a whole in the second one.</p>
+							<p>If you prefer text based information (as opposed to videos), more recently, I published an article that covers accessible web content creation in a bit more detail in WeaveUX, and for more technical coverage of web accessibility, check out the Code4Lib article I co-authored.</p>
+							<p>Finally, while most of the posts are a bit older, my WCAG blog post series covers best practices around content and website creation for all Level A and AA guidelines by explicitly referring to them.</p>
+							<p>There are lots of general resources as well, so I encourage you to search and read on any particular aspect that may be unclear to you.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Auditing and Evaluating Your Website</h2>
+						<h3 class="fragment">Simulation</h2>
+
+						<aside class="notes">
+							<p>There are many accessibility checkers out there and I will only mention a very few number so as to cover what is required, but keep in mind that there are alternatives to all of these tools, so by no means do you need to use the ones I mention here. These are simply the ones that I often use, but doesn't even cover all the ones I might use when evaluating a website for accessibility.</p>
+							<p>There are two main types of tools.</p>
+							<p>Simulation tools allow you to simulate certain conditions or environments.</p>
+						</aside>
+					</section>
+					<section>
+						<h4><a href="https://www.toptal.com/designers/colorfilter">Colorblind Web Page Filter</a></h4>
+						<img src="images/colorblind-filter-example.png" alt="side by side comparison of original and colour filtered site">
+
+						<aside class="notes">
+							<p>For example, Colorblind Web Page Filter allows you to enter a web address and simulates colour blindness.</p>
+						</aside>
+					</section>
+					<section>
+						<h4><a href="http://www.standards-schmandards.com/projects/fangs/">Fangs</a></h4>
+						<img src="images/fangs-example.png" alt="example text output from Fangs">
+
+						<aside class="notes">
+							<p>There are also some screen reader emulators, such as Fangs.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Evaluation</h3>
+
+						<aside class="notes">
+							<p>Evaluation tools allow you to check conformance to guidelines.</p>
+						</aside>
+					</section>
+					<section>
+						<h4><a href="https://validator.w3.org/">W3C validator</a></h4>
+						<img src="images/w3c-validator-example.png" alt="example text output from Fangs">
+
+						<aside class="notes">
+							<p>W3C validator to validate code, making sure the syntax is correct and conforms to the latest specification.</p>
+						</aside>
+					</section>
+					<section>
+						<h4><a href="http://squizlabs.github.com/HTML_CodeSniffer/">HTML Codesniffer</a> (bookmarklet)</h4>
+						<img src="images/HTML-codesniffer-example1.png" alt="example report overview from HTML Codesniffer">
+						<img src="images/HTML-codesniffer-example2.png" alt="example details from HTML Codesniffer">
+
+						<aside class="notes">
+							<p>HTML Codesniffer (bookmarklet) - check against WCAG, including when logged in.</p>
+						</aside>
+					</section>
+					<section>
+						<h4><a href="https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/">WCAG Contrast Checker</a> (Firefox plugin)</h4>
+						<img src="images/contrast-checker-full-example.png" alt="example contrast checker results">
+
+						<aside class="notes">
+							<p>WCAG Contrast Checker (Firefox plugin)</p>
+						</aside>
+					</section>
+					<section>
+						<h4><a href="http://wave.webaim.org/toolbar/">WAVE Toolbar</a></h4>
+						<img class="fragment" src="images/fangs-example.png" alt="example text output from Fangs">
+
+						<aside class="notes">
+							<p>WAVE Toolbar - view as text-only, outline only, etc.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Manual Tests with Devices</h3>
+						<h4 class="fragment">Mouse</h4>
+						<h4 class="fragment">Touch screen</h4>
+						<h4 class="fragment">Keyboard</h4>
+						<img class="fragment" src="images/wp-theme-input-focus.png" alt="search field with outline" class="fragment">
+						<img class="fragment" src="images/skip-link-example.png" alt="search field with outline" class="fragment">
+
+						<aside class="notes">
+							<p>Some things must be tested manually. For example, you may need to test mouse usage, especially on hover, or how specific behaviour on a touch screen. Similarly, keyboard accessibility is often tested manually.</p>
+							<p>Websites should always be fully accessible by a keyboard. Interactive elements should be navigable and controllable by keyboard, keyboard shortcuts should not override default behaviour, and users should always know where they are.</p>
+							<p>For example, visual cues for input focus help your users regardless of whether they only use a keyboard or not, but are necessary for keyboard only users.</p>
+							<p>And if you have hidden links, such as skip links, they should show up when there is focus on it.</p>
+						</aside>
+					</section>
+					<section>
+						<h3 class="fragment">Automated Testing Frameworks</h2>
+						<ul>
+							<li class="fragment"><a href="https://github.com/dequelabs/axe-core">aXe core</a></li>
+							<li class="fragment"><a href="https://github.com/liip/TheA11yMachine">A11y Machine</a></li>
+						</ul>
+
+						<aside class="notes">
+							<p>There are also automated testing frameworks for those who do a development work and are familiar with integrating these types of frameworks into their unit testing, but as most website content creators and even administrators may not have access to these resources, I will not be talking about these in any detail.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Demo: HTML Codesniffer</h2>
+
+						<aside class="notes">
+							<p>When doing an analysis of a website, I recommend using using at least two different accessibility code checkers and manual keyboard testing. While we don't have time to cover all the tools, I want to focus on just a couple of them. So, let's start with HTML Codesniffer.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/html-codesniffer-nnels-ex0.png" alt="Report with no errors">
+
+						<aside class="notes">
+							<p>After turning on the bookmarklet, you will see an overview of the number of errors and warnings. Ideally, you want no errors just like on this site. You want to check that nothing in the warnings section is in fact an error, but focus on the errors first.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/html-codesniffer-fl-ex1.png" alt="Report with errors and showing dropdown of different guidelines">
+
+						<aside class="notes">
+							<p>After getting your initial results, you can select the guidelines you want your report based on. So for example, if you want WCAG Level A, you can choose that instead, but defaults to Level AA, which is what we want anyway. When looking at a report, especially for the first time, I typically turn off the warnings, so as to focus on the errors.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/html-codesniffer-fl-ex2.png" alt="">
+
+						<aside class="notes">
+							<p>As you view individual errors, the bookmarklet will list the error, recommendation, WCAG criterion it fails, suggested technique, code exerpt, and attempt to mark the element on the page that it is referring to. Often times, colour contrast errors, such as this one, where the link colour supposedly does not have a high enough contrast with the background will repeat because it will mark every instance on the page as an error. Therefore, changing the link colour across the site to meet the minimum contrast guidelines could potentially fix numerous errors on every page.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/html-codesniffer-fl-ex3.png" alt="">
+
+						<aside class="notes">
+							<p>While in some cases, errors are specific to content on one particular page, often errors are in the header, footer, or much like the previous example, something that needs to be changed site-wide. If you are not the site administrator, then you will want to work closely with them. If <em>you</em> are a site administrator, then remember that it is best to start with a single page, usually the home page, before looking at other parts of the site, because you'll likely fix a lot of the errors just from looking at the one page.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Demo: WAVE Toolbar</h2>
+
+						<aside class="notes">
+							<p>The second one I want to cover is WAVE Toolbar.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/wave-toolbar-fl-ex1.png" alt="">
+
+						<aside class="notes">
+							<p>After installing the extension, you can simply click on the WAVE Toolbar icon in the top right to turn it on, and you will see the sidebar open with your report on the left. As you can see, WAVE provides a report as well but broken into sections. It also uses various icons to mark all the errors on the page.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/wave-toolbar-fl-ex2.png" alt="">
+
+						<aside class="notes">
+							<p>You can click on each icon to find out what the error is, or the information for the related marker. The really nice thing about WAVE is that it tries to make it as simple as possible. I particularly appreciate that it tries to put things into natural language. The downside is that the icons can be visual clutter, shift the visual look of the site so that it no longer reflects what it normally looks like, and the information is a little more buried.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/wave-toolbar-fl-ex3.png" alt="">
+
+						<aside class="notes">
+							<p>Lastly, WAVE is great for looking at the header structure of a page, since it will mark all the headers with their respective levels, you can easily see if for some reason you possibly have the wrong header number since your headers should be in descending number. For example, if the title for your news items use header 3, then the header declaring this is the news section, should be header 2.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Demo: Keyboard Accessibility</h2>
+
+						<aside class="notes">
+							<p>One thing I want to quickly demo as well is keyboard accessibility testing. To test keyboard accessibility, what you want to do is to use the TAB key on your keyboard to move through the site, but often, it can be difficult to see where you are.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/kb-test-add-outline.gif" alt="">
+
+						<aside class="notes">
+							<p>The trick is to right click on a link within the page to "inspect" the element, opening the developer tools. You can then add a new temporary CSS rule to say that on focus, all links should have a red outline, so that when you close the inspector, as you tab through your links, you can clearly see where your cursor is.</p>
+							<p>On the first passthrough, I recommend simply making sure that you don't end up in a keyboard trap, and then on the subsequent passes, try to interact with various elements.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Ask Your Users</h2>
+
+					<aside class="notes">
+						<p>While tools and testing is a great way to make sure you're meeting the guidelines, passing all of these tests does not mean that your website is actually accessible or usable. Nothing can replace actual user and usability testing.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Accessibility Statement</h2>
+					<ul>
+						<li class="fragment">Wording from FSAD</li>
+						<li class="fragment"><a href="https://www.w3.org/TR/WCAG/#conformance">WCAG Conformance Claims</a></li>
+						<li class="fragment">Partial Conformance Claim with 3rd Party Content</li>
+					</ul>
+
+					<aside class="notes">
+						<p>One of the things you will need to do is write an accessibility statement which should include the wording from the FSAD in the memo you received, and conformance claims following WCAG. In some cases, if large or integral parts of your website include third-party software, you will only be able to make a partial conformance claim, but that's fine. It's better to make it clear to the reader that the parts provided by a third party are out of your control, but that you're willing to assist in whatever way you can. Ideally, the third party has their own accessibility statement and if they state that they conform with WCAG, then you could make a full conformance claim.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Take Away</h2>
+
+						<aside class="notes">
+							<p>Alright, I know that was a lot of information, so if you missed any of that, don’t worry, the recording will be posted, and I will post a copy of my slides with notes as well.</p>
+							<p>While it’s important to take best practices into consideration and put guidelines into practice, if I can give you one take away, it is this:</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Make it easy to contact you.</blockquote>
+
+						<aside class="notes">
+							<p>If someone is having trouble accessing the information on your website, then you want them to be able to contact you and tell you. You can always provide an alternative way of providing information if the website is not something you can fix right away. Your due diligence is not to have a perfect website, but to work with others to make information accessible through your website. We often also cannot predict or test for every single way that people might access the website, so do the best you can, put up an accessibility statement, and simply make it easy for someone to contact you.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<div class="contact">
+						<h3>Contact</h3>
+						<img src="images/nodoka-transparent.png" alt="nodoka holding a stack of books">
+						<ul>
+							<li>Cynthia Ng</li>
+							<li>@TheRealArty</li>
+							<li><a href="http://about.me/cynthiang">about.me/cynthiang</a></li>
+						</ul>
+					</div>
+
+					<aside class="notes">
+						<p>Thank you.</p>
+					</aside>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
