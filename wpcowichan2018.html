@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Making Accessible Content and Websites in WordPress - Cynthia Ng</title>
+
+		<meta name="description" content="Making Accessible Content and Websites in WordPress for the Cowichan WordPress Meetup August 2018">
+		<meta name="author" content="Cynthia &quote;Arty&quote; Ng">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple-custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Making Accessible Content and Websites in WordPress</h1>
+					<p>
+							<a href="http://about.me/cynthiang">Cynthia Ng</a><br>
+							<a href="http://twitter.com/TheRealArty">@TheRealArty</a><br>
+							August 18, 2018
+					</p>
+					<aside class="notes">
+						<p>Introduction - Hi everyone, hope you’re having a good day.</p>
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h2>What is Web Accessibility?</h2>
+
+						<aside class="notes">
+							<p>We’re here today to talk about accessibility, but what <em>is</em> accessibility?</p>
+							<p>One definition, and what seems to be the most common one is that</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Web accessibility means that people with disabilities can use the Web. <p class="quoted">- W3C Web Accessibility Initiative (WAI)</p></blockquote>
+						<cite>W3C Web Accessibility Initiative. (2005). What is Web Accessibility. <em>Introduction to Web Accessibility</em>. <a href="http://www.w3.org/WAI/intro/accessibility.php"><a href="http://www.w3.org/WAI/intro/accessibility.php">http://www.w3.org/WAI/intro/accessibility.php</a></a></cite>
+
+						<aside class="notes">
+							<p>Normally, the next step might be to define a disability. Unfortunately, that’s actually a really hard task, but we <em>can</em> look at the different types of disabilities to get a better idea.</p>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Types of Disabilities</h2>
+						<ul>
+							<li class="fragment">visual</li>
+							<li class="fragment">auditory</li>
+							<li class="fragment">physical/motor</li>
+							<li class="fragment">touch</li>
+							<li class="fragment">learning</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>visual: other than blindness, this might also refer to people who have difficulty with judging distances and hand-eye coordination</li>
+								<li>auditory: other than deafness, this might also refer to other hearing issues, such as having difficulty focusing on a single voice</li>
+								<li>physical/motor: examples include not being able to grip something or problems with precise movements</li>
+								<li>touch: namely this refers to a lack of sensation with touch</li>
+								<li>learning: is a rather large umbrella term, but includes dyslexia and other reading disabilities, as well as dysphasia and related issues with writing</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Why Should You Care?</h2>
+
+						<aside class="notes">
+							<p>So now that we have an idea of the group of people we're referring to, why should we care?</p>
+							<p>People with a disability are a minority, and not all of them need special consideration for web accessibility, right? While that may be true, you might be surprised by some of the facts.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/15in10.png" alt="icon of 7 people, with one fill in">
+						<cite>Statistics Canada. (2017). Infographic: Canadian Survey on Disability <em>Canadian Survey on Disability.</em> <a href="https://www150.statcan.gc.ca/n1/pub/11-627-m/11-627-m2017008-eng.htm">https://www150.statcan.gc.ca/n1/pub/11-627-m/11-627-m2017008-eng.htm</a></cite>
+
+						<aside class="notes">
+							<p>According to the last Canadian Survey on Disability, 1 in 7 (~14%) of Canadians 15 years or older reported a disability.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Disability > Minority*</h3>
+						<cite>* Based on 2016 Canada census <a href="http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=PR&Code1=01&Geo2=PR&Code2=01&Data=Count&SearchText=canada&SearchType=Begins&SearchPR=01&B1=Visible%20minority&TABID=1">Visible minority population from Census Profile, 2016 Census</a></cite>
+
+						<aside class="notes">
+							<p>To help put this into perspective, the number of people with a disability is larger than any single group of visible minority. That’s a Big Minority.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Policy &amp; Legislation</h2>
+
+						<aside class="notes">
+							<p>In Canada, there is currently no federal legislation. However...</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Accessible Canada Act, C-81</h3>
+						<p>First Reading: June 20, 2018</p>
+						<cite>Parliament of Canada. (2018). C-81: An Act to ensure a barrier-free Canada <em>House Government Bill</em>.<a href="https://www.parl.ca/LegisInfo/BillDetails.aspx?billId=9990870&Language=E">https://www.parl.ca/LegisInfo/BillDetails.aspx?billId=9990870&Language=E</a></cite>
+
+						<aside class="notes">
+							<p>Bill C-81 aka Accessible Canada Act went through a first reading back in June. While that's no guarantee for passing, it was one of the election campaign promises by the current federal government.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Legislation in Canada</h3>
+						<ul>
+							<li class="fragment">Accessibility for Ontarians with Disabilities Act (AODA) (2005)</li>
+							<li class="fragment">Canadian Human Rights Act (1977)</li>
+							<li class="fragment">Standard on Web Accessibility (2011) for Government of Canada</li>
+						</ul>
+						<h3 class="fragment">Policy</h3>
+						<ul>
+							<li class="fragment">organization</li>
+							<li class="fragment">grants</li>
+							<li class="fragment">sponsorship</li>
+						</ul>
+
+						<aside class="notes">
+							<p>AODA requires Web Content Accessibility Guidelines (WCAG) 2.0 Level AA with a couple of exceptions by 2021 for all public institutions and large private and non-profit organizations. Canadian Human Rights Act which ensures equal opportunity but applies only to organizations with federally regulated activities. All other organizations fall under provincial or territorial law. Though due to a court case, the Standard on Web Accessibility came into effect for all department and agencies in the Government of Canada in 2011, which also outlines the requirement to meet WCAG 2.0 Level AA with a couple of exceptions.</p>
+							<p>Beyond legislation itself, there may be policies at particular organizations, and as requirements of grants or sponsorships for specific projects, also often requiring WCAG.</p>
+							<p>Unfortunately, I don't have time to go into WCAG today, but I do have some blog posts about it and if you need your site to be web accessible, WCAG 2.0 or even the new 2.1 would be the guidelines to meet.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Getting Buy-in</h2>
+
+						<aside class="notes">
+							<p>People frequently ask me how to get buy-in from others, because they might be convinced that we should care about accessibility and do something about it, but too often, accessibility is put aside because it’s too difficult, time consuming, or due to a belief that “accessible websites are ugly.”</p>
+							<p>On a side note, this last excuse is not true. I mean yes, some accessible websites are ugly, but in the same way that some websites are ugly regardless of the level of accessibility. If anything, the most accessible websites I’ve reviewed have been fairly pleasing to the eye.</p>
+						</aside>
+					</section>
+					<section>
+						<a href="http://www.wcs.org/"><img src="images/wcs-frontpage-screenshot.png" alt="screenshot of Wildlife Conservation Society website homepage"></a>
+						<cite>Source: Sutton, Marcy. (2015). <a href="https://a11ywins.tumblr.com/post/131710293718/wildlife-conservation-society">Wildlife Conservation Society</a>. <em><a href="http://a11ywins.tumblr.com/">Showcasing Accessible Websites</a></em></cite>
+
+						<aside class="notes">
+							<p>For just one example, just check out the Wildlife Conservation Society website.</p>
+						</aside>
+					</section>
+					<section>
+						<h2>Benefits</h2>
+						<ul>
+							<li class="fragment">reflect institutional mission, leadership, and values</li>
+							<li class="fragment">serve all users</li>
+							<li class="fragment">make sound fiscal policy</li>
+							<li class="fragment">add value to the institution</li>
+						</ul>
+						<cite class="fragment">Sources: Maler, A. (2013). The Complete Beginner’s Guide to Universal Design. UX Booth<em>. <a href="http://www.uxbooth.com/articles/the-complete-beginners-guide-to-universal-design/">http://www.uxbooth.com/articles/the-complete-beginners-guide-to-universal-design/</a> and Rowland, C., Mariger, H., Siegel, P. M., &amp; Whiting, J. (2010). Universal Design for the Digital Environment: Transforming the Institution. </em>EDUCAUSE Review*, 45(6). <a href="http://www.educause.edu/ero/article/universal-design-digital-environment-transforming-institution">http://www.educause.edu/ero/article/universal-design-digital-environment-transforming-institution</a></cite>
+
+						<aside class="notes">
+							<p>In any case, there are numerous reasons you can present as benefits for putting into practice the methodologies presented, including that they:</p>
+							<ul>
+								<li>reflect institutional mission, leadership, and values,</li>
+								<li>serve all users, - not just those with disabilities, and I’ll talk more about this</li>
+								<li>make sound fiscal policy, - since it improves efficiency and reduces costs while maintaining quality, avoids retrofitting, avoids inequitable solutions, avoids litigation; frequently fulfills grant/contract requirements - and</li>
+								<li>add value to the institution. - because you have better content, it benefits more people (e.g. captions help people with varying language skills), easier to maintain and update, and higher compatibility with various software and hardware.</li>
+							</ul>
+							<p>Of course, knowing <em>why</em> doesn’t tell you <em>how</em> to approach accessibility.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Approach to Accessibility</h2>
+
+						<aside class="notes">
+							<p>Whether you want to, or because you’re told to, half the battle seems to simply be figuring out your approach.</p>
+							<p>If, like many others, you see accessibility as something at the end of a checklist, then that’s when you’ll deal with it.</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>Accessibility often gets pigeon-holed as simply making sure there are no barriers to access for screen readers or other assistive technology, <em>without</em> regard to usability.<p class="quoted">- Whitney Quesenbery @whitneyq</p></blockquote>
+						<cite>Quesenbery, W. (2009). Usable Accessibility: Making Web Sites Work Well for People with Disabilities. UX Matters. <a href="http://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php">http://www.uxmatters.com/mt/archives/2009/02/usable-accessibility-making-web-sites-work-well-for-people-with-disabilities.php</a></cite>
+
+						<aside class="notes">
+							<p>... Just because something is accessible does not mean it’s usable, but first</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Designing for Assistive Technology</h2>
+
+						<aside class="notes">
+							<p>Let’s also take a look at her point on “assistive technology”.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Assistive Technology</h3>
+						<ul>
+							<li class="fragment">screen readers</li>
+							<li class="fragment">text-to-speech</li>
+							<li class="fragment">screen magnifiers</li>
+							<li class="fragment">joysticks</li>
+							<li class="fragment">mobile devices</li>
+							<li class="fragment">keyboards</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Say as part of your approach, you want to make sure your content is accessible to all assistive technology. You start with ‘screen readers’ on your list,  and do some searching and start adding, other ‘text-to-speech’ software, ‘screen magnifiers’, ‘joysticks’, what about ‘mobile devices’ with the added accessibility features? What about ‘keyboards’ for keyboard accessibility?</p>
+							<p>Is there anyone who doesn’t use a keyboard or touch screen regularly?</p>
+							<p>At this point, you might realize that</p>
+						</aside>
+					</section>
+					<section>
+						<blockquote>All Technology is Assistive Technology. <p class="quoted">- Sara Hendren @ablerism</p></blockquote>
+						<cite>Hendron, S. (2013). All Technology is Assistive Technology: 6 dispositions for designers on disability. <a href="https://medium.com/thoughtful-design/a8b9a581eb62">https://medium.com/thoughtful-design/a8b9a581eb62</a></cite>
+
+						<aside class="notes">
+							<p>We are not creating content for a specific piece of technology, we can’t. Nevertheless, we can keep in mind the different ways users might interact with our website.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Content Guidelines</h2>
+
+						<aside class="notes">
+							<p>When creating content, there are a few simple guidelines you can follow to make your content more accessible.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>General Writing</h3>
+						<ul>
+							<li class="fragment">use consistent language</li>
+							<li class="fragment">write out acronyms the first time you use them</li>
+							<li class="fragment">be clear and concise</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Let's start with some general writing tips: first, use consistent language. For example, if students are given optional readings, do not use "Additional Readings" in one place and then "Optional Readings" in another. Try to be consistent across all your writing across courses, webpages, even print documents.</p>
+							<p>Next, write out acronyms the first time you use them.</p>
+							<p>And when writing, be clear and concise.</p>
+							<p>That's it. Well, okay, not really, but those really are the only ones that are specific to writing style or the use of words. All the other guidelines I will cover are more about structuring or marking up content.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Headings</h3>
+						<ul>
+							<li class="fragment">Header 1 (Title): Making Content Accessible</li>
+							<li class="fragment">Header 2 (Topic): Creating Documents</li>
+							<li class="fragment">Header 3 (Subtopic): Using Headers</li>
+							<li class="fragment">Header 2 (Topic): Creating Media</li>
+						</ul>
+
+						<aside class="notes">
+							<p>The first one I want to cover is headings.</p>
+							<p>Imagine you’re writing a report. Think about how you would structure the headings. You’d have your title as a header 1, your various topics as header 2, and any subtopics as header 3. You might even have header 4, 5 or 6 depending on how much you break down each topic. Now apply that thinking to how you structure content on a web page.</p>
+							<p>For example, header 1 is ... creating media.</p>
+							<p>Issues will arise if you rely on font size or bold instead of headers, or if you use the wrong header level.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Headings in WordPress</h3>
+						<img src="images/wordpress-headings-dropdown.png" alt="" class="fragment">
+
+						<aside class="notes">
+							<p>In WordPress, simply make sure to use the dropdown and select the appropriate heading or in creating the HTML code.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h3>Links</h3>
+					<p class="fragment"><a href="http://www.wordpress.com">Click here</a> <br>vs. <br><a href="http://www.wordpress.com">WordPress site</a></p>
+
+					<aside class="notes">
+						<p>Links, such a common thing, so it's simple, but important. The text for every link should be descriptive and generally, unique within a single page. Imagine there was no other text around it except a title of the page or headings, would you understand what that link is for? If you can’t do it yourself, don’t expect others to.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Media</h3>
+
+					<aside class="notes">
+						<p>Let’s talk about media.</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h4>Images</h4>
+						<p>Alternative Text: alt=""</p>
+
+						<aside class="notes">
+							<p>When you include images, you also need to include alternate or alt text, which allows you to include descriptive information about the image. While the text is not visible to most users, assistive technologies will read the alternate text as a description of the image, so write concisely, while still providing an accurate description of the image.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="https://farm1.staticflickr.com/73/218593298_1a157aefcd_o.jpg" alt="red panda">
+						<cite>griangrafanna. (2006). Red Panda Pensive. <a href="https://www.flickr.com/photos/rh_photographic_art/12831639683/">https://www.flickr.com/photos/rh_photographic_art/12831639683/</a> <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a></cite>
+
+						<aside class="notes">
+							<p>The important point is that your description should be what the image is trying to convey. A picture of a red panda in an English class might describe facial expression and possible emotion, but that same picture in a Biology class might focus on size and coat colour to determine age, gender, or health.</p>
+						</aside>
+					</section>
+					<section>
+						<h5>Inserting Images in WordPress</h5>
+						<img src="images/wp-image-metadata.png" alt="image information editor box in WordPress">
+
+						<aside class="notes">
+							<p>Many online systems, such as WordPress, will have a field box for you to enter the alt text when you are inserting the image rather than having to do it afterwards.</p>
+							<p>Alternatively, you can give your image a descriptive caption, which everyone will see, in which case, you can leave the alt text blank.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="http://www.4syllables.com.au/wp-content/uploads/2010/12/decision-tree1.png" alt="alt text decision flow chart">
+						<cite>Alexander, Dey. (2014). <a href="http://www.4syllables.com.au/2010/12/text-alternatives-decision-tree/">Text alternatives for images: a decision tree</a>.</cite>
+
+						<aside class="notes">
+							<p>Similarly, if your image has been included for purely decorative purposes or is itself an alternate to a textual explanation, you should leave the alternate text empty.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/graph-example.png" alt="bar graph example">
+
+						<aside class="notes">
+							<p>If you need to use colours for figures, such as graphs, consider very different, high contrast colours. You can also use a mix of colour and patterns. Just imagine if you printed your document using a black and white printer. Would you still be able to properly understand your coloured figures? Try to also have the data in table format if possible.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h4>Audio</h4>
+						<p class="fragment">Woman: You should give an example.<br>
+							Man: Very well. (clears throat) This is the best example I can think of.</p>
+
+						<aside class="notes">
+							<p>All non-text content, including audio and visual materials should have an alternate, usually, text version. The suggested method for audio is a text transcript.</p>
+						</aside>
+					</section>
+					<section>
+						<h4>Video with Captions Example</h4>
+						<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YTR21os8gTA?rel=0" frameborder="0" allowfullscreen></iframe>
+						<cite>LabofOrnithology. (2012). Birds-of-Paradise Project Introduction. <a href="https://www.youtube.com/watch?v=YTR21os8gTA">https://www.youtube.com/watch?v=YTR21os8gTA</a></cite>
+
+						<aside class="notes">
+							<p>For video, captions are recommended.</p>
+							<p>Let's take a look at this example. I'll just turn on the closed captions, and hopefully you can see what I'm seeing.</p>
+							<p>In general, text transcripts and captions are also very useful for non-auditory learners and for those whose English is not their first language. Using these two methods should cover your whole audience.</p>
+						</aside>
+					</section>
+					<section>
+						<h4>Descriptive Video Example</h4>
+						<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/PCZqKxQME6o?rel=0" frameborder="0" allowfullscreen></iframe>
+						<p>Suddenly, a hooded figure springs out and zaps R2 with a gun. R2 stops dead in his tracks, his metal body crawling with electrical current. His lights go out and he keels forward.</p>
+						<cite>Electrox3d. (2011). Star Wars for Blind People (Blu-ray audio track): description of a Jawa shooting R2!. <a href="http://www.youtube.com/watch?v=PCZqKxQME6o">http://www.youtube.com/watch?v=PCZqKxQME6o</a></cite>
+
+						<aside class="notes">
+							<p>There is also the option of descriptive audio. For those who are not familiar with descriptive audio, it is an additional audio track that is added to a video to describe what is happening. Here is an example: ...</p>
+							<p>While descriptive audio is ideal for visually impaired people watching videos, it is generally very costly to make, so it is not usually offered unless it has already been produced.</p>
+							<p>Alternatively, sometime you will find the description included in the transcript or an alternate version of the captions. You would then simply have two options for captions for people to choose from: one with and one without descriptions.</p>
+						</aside>
+					</section>
+					<section>
+						<h4>More on Audio/Video</h4>
+						<ul>
+							<li class="fragment">Text Alternate not needed if already explained in text.</li>
+							<li class="fragment">No autoplay</li>
+							<li class="fragment">Have controls</li>
+							<li class="fragment">Avoid flashing</li>
+						</ul>
+
+						<aside class="notes">
+							<p>Much like images, if the audio/video is actually an alternate to text, such as in a tutorial where an explanation is already fully explained in text form, then no alternative is required.</p>
+							<p>Also make sure that your audio and video do not autoplay.</p>
+							<p>Anything longer than 3 seconds should also have controls to pause and play. However, these should be built into the system you are using for the most part.</p>
+							<p>Avoid flashing, or very fast animations and changes. Anything that flashes 3 times in any one second period can cause epileptic reactions.</p>
+							<p>If you would like to learn more about captions and transcripts, Penn State’s Video Captions and Audio Transcripts Guide is a good place to start.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h3>Media Summarized</h3>
+					<ul>
+						<li class="fragment">Images: alt text</li>
+						<li class="fragment">Audio: transcript</li>
+						<li class="fragment">Video: transcript, captions, descriptive audio</li>
+					</ul>
+
+					<aside class="notes">
+						<p>So, to summarize, alt text for images, transcripts for audio, and transcripts or captions for video or video with a descriptive audio track if it happens to be available.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Accessibility Statement</h2>
+					<ul>
+						<li class="fragment"><a href="https://www.w3.org/TR/WCAG/#conformance">WCAG Conformance Claims</a></li>
+						<li class="fragment"><a href="http://www.accessibilitystatementgenerator.com/">Accessibility Statement Generator</a></li>
+					</ul>
+
+					<aside class="notes">
+						<p>You’ve made the effort to create accessible content, but what if you forgot something? </p>
+						<p>One of the great ways to be transparent and show your efforts in supporting equitable access is to have an accessibility statement.</p>
+						<p>It doesn’t need to be long, but simply a statement to say you’ve made the effort and who to contact if someone has any concerns</p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>WordPress Sites</h2>
+
+						<aside class="notes">
+							<p>Right, so beyond writing content for the site, there's the site itself.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Choosing an Accessible Theme</h3>
+						<ul>
+							<li class="fragment"><a href="https://wordpress.org/themes/author/wordpressdotorg/">By WordPress.org</a></li>
+							<li class="fragment"><a href="https://wordpress.org/themes/tags/accessibility-ready/">Accessibility Ready Tag</a></li>
+						</ul>
+
+						<aside class="notes">
+							<p>Probably the most important is your theme. I highly recommend one of the themes built by the WordPress team, which are named after the year they're released. Otherwise, also check out themes with the Accessibility Ready tag, which only receive the tag if they pass the accessibility audit done by the theme audit group.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Plugins</h3>
+						<ul>
+							<li class="fragment"><a href="https://wordpress.org/plugins/wp-accessibility/">WP Accessibility</a></li>
+							<li class="fragment"><a href="https://make.wordpress.org/accessibility/handbook/which-tools-can-i-use/other-plugins-to-improve-accessibility/">Make WordPress Accessible: Useful Plugins</a></li>
+						</ul>
+
+						<aside class="notes">
+							<p>When it comes to plugins, there's WP Accessibility, which will make changes to your theme and content to increase its accessibility. The Accessibility team also has links to a few other plugins that are designed to make other commons features and plugins more accessible, such as Gravity Forms and Twitter feeds.</p>
+							<p>If you're a developer, I also recommend checking out their development tools page which has a lot of great resources.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Assessing Your Website</h2>
+						<h3>Simulation</h2>
+						<ul>
+							<li><a href="https://www.toptal.com/designers/colorfilter">Colorblind Web Page Filter</a></li>
+							<li><a href="http://www.standards-schmandards.com/projects/fangs/">Fangs</a></li>
+						</ul>
+
+						<h3>Evaluation</h2>
+						<ul>
+							<li><a href="https://validator.w3.org/">W3C validator</a></li>
+							<li><a href="http://squizlabs.github.com/HTML_CodeSniffer/">HTML Codesniffer</a> (bookmarklet)</li>
+							<li><a href="https://addons.mozilla.org/en-us/firefox/addon/wcag-contrast-checker/">WCAG Contrast Checker</a> (Firefox plugin)</li>
+							<li><a href="http://wave.webaim.org/toolbar/">WAVE Toolbar</a></li>
+						</ul>
+
+						<h3>Frameworks</h2>
+						<ul>
+							<li><a href="https://www.deque.com/products/axe/">aXe accessibility</a></li>
+							<li><a href="https://tenon.io/">Tenon.io</a></li>
+						</ul>
+
+						<aside class="notes">
+							<p>These are just a few tools that I've used or heard good things about, but it's by no means an exhaustive list. If you're interested, check out the Accessibility team's list of tools since they have others listed.</p>
+						</aside>
+					</section>
+					<section>
+						<h2>Assessing Plugins</h2>
+
+						<aside class="notes">
+							<p>One quick way to evaluate plugins for accessibility is by using an accessibility code evaluator.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>HTML CodeSniffer Example</h3>
+						<img src="images/HTML-codesniffer-example1.png" alt="">
+
+						<aside class="notes">
+							<p>So, for example, if we use HTML Codesniffer, even if you don't really know what it's is doing or what the details in the report mean. You can turn it on before enabling a plugin, make a note of how many errors it's showing, turn the plugin on, add some test content if you need to, then run it again to see if that number has increased.</p>
+							<p>Only using a code evaluator cannot fully assess accessibility, but it's an easy and quick thing that anyone to run.</p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Accessibility Statement</h2>
+					<ul>
+						<li class="fragment"><a href="https://www.w3.org/TR/WCAG/#conformance">WCAG Conformance Claims</a></li>
+						<li class="fragment"><a href="http://www.accessibilitystatementgenerator.com/">Accessibility Statement Generator</a></li>
+					</ul>
+
+					<aside class="notes">
+						<p>You’ve made the effort to create accessible content, but what if you missed something? One of the great ways to be transparent and show your efforts in supporting equitable access is to have an accessibility statement.</p>
+						<p>It doesn’t need to be long, but simply a statement to say you’ve made the effort and who to contact if someone has any concerns. You can check out the WCAG to see how to make a more official conformance claim, and I found this accessibility statement generator online, which also follows WCAG. If you want something simpler, I suggest looking at public organizations for some ideas.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Take Away</h2>
+
+					<aside class="notes">
+						<p>Alright, I know that was a lot of information, so if you missed any of that, don’t worry, my slides will be posted and the recording will be available for you to review.</p>
+						<p>Hopefully you have enough resources to get started.</p>
+					</aside>
+				</section>
+
+				<section>
+					<blockquote>The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect. <p class="quoted">- Tim Berners-Lee @timbernerslee</p></blockquote>
+					<cite>World Wide Web Consortium. (1997). World Wide Web Consortium Launches International Program Office for Web Accessibility Initiative. <a href="http://www.w3.org/Press/IPO-announce">http://www.w3.org/Press/IPO-announce</a></cite>
+
+					<aside class="notes">
+						<p>If you only take away one thing from today, remember that your efforts in making your content accessible can help many others, not just those that are disabled.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<div class="contact">
+						<h3>Contact</h3>
+						<img src="images/nodoka-transparent.png" alt="nodoka holding a stack of books">
+						<ul>
+							<li>Cynthia Ng</li>
+							<li>@TheRealArty</li>
+							<li><a href="http://about.me/cynthiang">about.me/cynthiang</a></li>
+						</ul>
+					</div>
+
+					<aside class="notes">
+						<p>Thank you.</p>
+					</aside>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
