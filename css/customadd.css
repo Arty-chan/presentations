@@ -1,4 +1,4 @@
-// Custom CSS for Arty's presentations
+/* Custom CSS for Arty's presentations */
 
 body.index {
 	overflow: auto;
@@ -19,6 +19,8 @@ body.index {
 }
 
 /* TEXT */
+.reveal h1.longtitle { font-size: 3.4em; }
+
 .reveal .bigtext { font-size: 200%; }
 
 .reveal cite { 
@@ -48,7 +50,26 @@ body.index {
 }
 
 /* MEDIA */
-.reveal img, .reveal video, .reveal iframe { max-height: 700px; }
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-height: 660px;
+}
+
+.reveal h1 + img, 
+.reveal h2 + img, 
+.reveal h3 + img, 
+.reveal h4 + img, 
+.reveal h1 + video, 
+.reveal h2 + video, 
+.reveal h3 + video, 
+.reveal h4 + video, 
+.reveal h1 + iframe, 
+.reveal h2 + iframe, 
+.reveal h3 + iframe, 
+.reveal h4 + iframe { 
+  max-height: 600px; 
+}
 
 .reveal .contact h3 { 
   margin-top: 1em;
@@ -87,4 +108,18 @@ body.index {
 .reveal table th,
 .reveal table td {
   padding:0.5em;
+}
+
+/* Print PDF fix */
+.print-pdf .reveal img, 
+.print-pdf .reveal video, 
+.print-pdf .reveal iframe { 
+  max-height: 600px;
+  margin: 0;
+}
+.print-pdf .reveal img + img {
+  margin: 0 10px;
+}
+.print-pdf .reveal p + img {
+  max-height: 500px;
 }
