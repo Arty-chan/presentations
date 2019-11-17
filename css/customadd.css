@@ -1,5 +1,6 @@
 /* Custom CSS for Arty's presentations */
 
+/* for index page */
 body.index {
 	overflow: auto;
 }
@@ -53,7 +54,7 @@ body.index {
 .reveal img,
 .reveal video,
 .reveal iframe {
-  max-height: 660px;
+  max-height: 630px;
 }
 
 .reveal h1 + img, 
@@ -69,6 +70,7 @@ body.index {
 .reveal h3 + iframe, 
 .reveal h4 + iframe { 
   max-height: 600px; 
+  margin-top: 0;
 }
 
 .reveal .contact h3 { 
