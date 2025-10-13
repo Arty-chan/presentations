@@ -1,0 +1,155 @@
+/* Custom CSS for Arty's presentations */
+
+/* INDEX PAGE  */
+body.index {
+	overflow: auto;
+}
+
+#main {
+  margin: 3em;
+  font-size: 1.2em;
+  text-align: center;
+  width: calc(100% - 6em);
+  height: auto;
+
+  .list {
+    text-align: left;
+    display: inline-block;
+    line-height: 1.2em;
+  }
+
+}
+
+/* TEXT  */
+.smalltext {
+  font-size: 0.5em;
+}
+
+.reveal {
+  h1.longtitle { font-size: 3em; }
+
+  .bigtext { font-size: 200%; }
+
+  blockquote p.quoted {
+    text-align: right;
+    font-size: 70%;
+    display: block;
+    padding-top: 0;
+  }
+
+  cite { 
+    font-size: 40%;
+    display: block;
+    line-height: 1em;
+    margin-top: 1em;
+  }
+
+  img + cite,
+  a.linkedimg + cite { 
+    margin-top: -10px;
+  }
+
+  pre code {
+    max-height: 500px;
+  }
+
+  ul + h3 {
+    margin-top: 0.5em;
+  }
+}
+
+/* MEDIA */
+.reveal {
+  img,
+  video,
+  iframe {
+    max-height: 630px;
+  }
+
+  h1 + img, 
+  h2 + img, 
+  h3 + img, 
+  h4 + img, 
+  h1 + video, 
+  h2 + video, 
+  h3 + video, 
+  h4 + video, 
+  h1 + iframe, 
+  h2 + iframe, 
+  h3 + iframe, 
+  h4 + iframe { 
+    max-height: 600px; 
+    margin-top: 0;
+  }
+
+  .img-group {
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 0px;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+/* TABLE */
+  table,
+  table th,
+  table td {
+    border: 1px solid black;
+    border-collapse:collapse;
+  }
+
+  table th {
+    text-align: center;
+  }
+
+  table th,
+  table td {
+    padding:0.5em;
+  }
+
+  /* CONTACT SLIDE */
+  .contact {
+    h3 { 
+      margin-top: 1em;
+      margin-bottom:-0.5em;
+    }
+
+    img {
+      max-height:200px;
+      border: none;
+      box-shadow: none;
+      vertical-align: middle;
+    }
+
+    .icon {
+      margin: 0 5px 5px 5px;
+    }
+
+    ul {
+      list-style: none;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+/* Print PDF fix 
+.print-pdf .reveal img, 
+.print-pdf .reveal video, 
+.print-pdf .reveal iframe { 
+  max-height: 600px;
+  margin: 0;
+}
+.print-pdf .reveal img + img {
+  margin: 0 10px;
+}
+.print-pdf .reveal p + img {
+  max-height: 500px;
+}*/
