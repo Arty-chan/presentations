@@ -10,6 +10,7 @@ import Highlight from "../plugin/highlight/highlight.esm.js";
 Reveal.initialize({
 	hash: true,
 	fragmentInURL: false,
+	pdfSeparateFragments: false,
 
 	// Learn about plugins: https://revealjs.com/plugins/
 	plugins: [ Zoom, Notes, Search, Markdown, Highlight ]

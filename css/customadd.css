@@ -21,10 +21,6 @@ body.index {
 }
 
 /* TEXT  */
-.smalltext {
-  font-size: 0.5em;
-}
-
 .reveal {
   h1.longtitle { font-size: 3em; }
 
@@ -56,10 +52,16 @@ body.index {
   ul + h3 {
     margin-top: 0.5em;
   }
-}
+
+  .smalltext {
+    font-size: 0.5em;
+  }
+
+  .mediumtext {
+    font-size: 0.8em;
+  }
 
 /* MEDIA */
-.reveal {
   img,
   video,
   iframe {
