@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Title</title>
+
+		<meta name="description" content="A summary of using AI and how to help library users, presented at Code4libBC 2026.">
+		<meta name="author" content="Cynthia &quote;Arty&quote; Ng">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/custom.css" id="theme"> 
+		<link rel="stylesheet" href="css/customadd.css">
+		<link rel="stylesheet" href="css/wcag-examples.css">
+		<script src="js/wcag-examples.js" async></script>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/foundation.css">
+
+		<script src="js/config-cn.js" type="module" async></script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Title</h1>
+					<p>
+							<a href="http://about.cynthiang.ca/">Cynthia Ng</a><br>
+							<a href="https://mastodon.social/@artychan">@Arty-chan</a><br>
+							Nov 26, 2026
+					</p>
+					<aside class="notes">
+						<p>For the script, see <a href="https://cynthiang.ca/">the corresponding blog post.</a></p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>About me</h2>
+						<ul>
+							<li class="fragment">2012-2013 at <em>Ryerson University Library &amp; Archives (now TMUL)</em></li>
+							<ul>
+								<li class="fragment">Migrated website and ensured WCAG 2.0 compliance</li>
+							</ul>
+							<li class="fragment">2013-2014 at <em>CAPER-BC (Centre for Accessible Post-secondary Education Resources BC)</em></li>
+							<ul>
+								<li class="fragment">Migrated website and ensured WCAG 2.0 compliance</li>
+								<li class="fragment">Accessible book production</li>
+							</ul>
+							<li class="fragment">2014-2016 at <em>National Network for Equitable Library Service (NNELS)</em></li>
+							<ul>
+								<li class="fragment">Accessible book production and website improvements</li>
+							</ul>
+							<li class="fragment">2018 at <em>GitLab</em>, assist with first Voluntary Product Accessibility Template (VPAT) report</li>
+							<li class="fragment">Web Accessibility advocate</li>
+						</ul>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/otter-by-pomax.jpg" alt="otter with paws up in the air">
+						<cite>TheRealPomax. (2025). hello! (Tofino, BC) <a href="https://mastodon.social/@TheRealPomax/114722921127898176">https://mastodon.social/@TheRealPomax/114722921127898176</a> with permission</a></cite>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>What is…?</h2>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Web accessibility</h3>
+						<blockquote class="fragment">&ldquo;Web accessibility, or eAccessibility, is the inclusive practice of ensuring there are no barriers that prevent interaction with, or access to, websites on the World Wide Web by people with physical disabilities, situational disabilities, and socio-economic restrictions on bandwidth and speed.&rdquo;<p class="quoted">- <a href="https://en.wikipedia.org/wiki/Web_accessibility">Wikipedia</a></p></blockquote>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+
+					<section>
+						<h3>WCAG</h3>
+						<blockquote class="fragment">&ldquo;Web Content Accessibility Guidelines (WCAG) 2 is developed through the W3C process in cooperation with individuals and organizations around the world, with a goal of providing a single shared standard for web content accessibility that meets the needs of individuals, organizations, and governments internationally.&rdquo;<p class="quoted">- <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG 2 Overview: Introduction</a></p></blockquote>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>WCAG timeline</h4>
+						<ul>
+							<li>WCAG 1.0 : 1999 May</li>
+							<li>WCAG 2.0 : 2008 December : 61 success criteria</li>
+							<li>WCAG 2.1 : 2018 June : Added 17 new</li>
+							<li>WCAG 2.2 : 2023 October : Added 9 new, removed 1</li>
+							<li>WCAG 3.0 (future) : 2025 September (latest draft)</li>
+						</ul>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>What we’re (not) covering</h2>
+					<table class="smalltext">
+						<tr>
+							<th>New Success Criteria in WCAG 2.1</th>
+							<th>New Success Criteria in WCAG 2.2</th>
+						</tr>
+						<tr>
+							<td>1.3.4 Orientation (AA)<br>
+							    1.3.5 Identify Input Purpose (AA)<br>
+							    1.3.6 Identify Purpose (AAA)<br>
+							    1.4.10 Reflow (AA)<br>
+							    1.4.11 Non-Text Contrast (AA)<br>
+							    1.4.12 Text Spacing (AA)<br>
+							    1.4.13 Content on Hover or Focus (AA)<br>
+							    2.1.4 Character Key Shortcuts (A)<br>
+							    2.2.6 Timeouts (AAA)<br>
+							    2.3.3 Animation from Interactions (AAA)<br>
+							    2.5.1 Pointer Gestures (A)<br>
+							    2.5.2 Pointer Cancellation (A)<br>
+							    2.5.3 Label in Name (A)<br>
+							    2.5.4 Motion Actuation (A)<br>
+							    2.5.5 Target Size (AAA)<br>
+							    2.5.6 Concurrent Input Mechanisms (AAA)<br>
+							    4.1.3 Status Messages (AA)
+							</td>
+							<td>2.4.11 Focus Not Obscured (Minimum) (AA)<br>
+							    2.4.12 Focus Not Obscured (Enhanced) (AAA)<br>
+							    2.4.13 Focus Appearance (AAA)<br>
+							    2.5.7 Dragging Movements (AA)<br>
+							    2.5.8 Target Size (Minimum) (AA)<br>
+							    3.2.6 Consistent Help (A)<br>
+							    3.3.7 Redundant Entry (A)<br>
+							    3.3.8 Accessible Authentication (Minimum) (AA)<br>
+							    3.3.9 Accessible Authentication (Enhanced) (AAA)
+							</td>
+						</tr>
+					</table>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Template & structure</h2>
+
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h3>Responsive design</h3>
+						<ul>
+							<li class="fragment">Orientation - AA (1.3.4)</li>
+							<ul>
+								<li class="fragment">allow portrait and landscape</li>
+							</ul>
+							<li class="fragment">Reflow - AA (1.4.10)</li>
+							<ul>
+								<li class="fragment">content readable/functional at 320px width (400% zoom)</li>
+							</ul>
+						</ul>
+						<img class="fragment" style="height: 35vh;" src="https://upload.wikimedia.org/wikipedia/commons/2/24/800x518_smartphone_portrait_vs_landscape_orientation.png" alt="">
+						<cite class="fragment">Source: <a href="https://commons.wikimedia.org/wiki/File:800x518_smartphone_portrait_vs_landscape_orientation.png">GR8DAN, CC0, via Wikimedia Commons</a></cite>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h3>Visual design</h3>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Non-Text Contrast - AA (1.4.11)</h4>
+						<ul>
+							<li>3:1 contrast</li>
+						</ul>
+						<img src="images/nontext-contrast-example.png" alt="">
+						<!-- <div class="wcag-demo">
+						  <div class="wcag-demo-container">
+						    <div class="wcag-demo-half wcag-demo-bad">
+						      <h5>❌ Low Contrast (1.5:1)</h5>
+						      <div style="padding: 15px; background: #f5f5f5; border-radius: 4px;">
+						        <input type="text" placeholder="Input field" 
+						               style="width: 100%; padding: 8px; border: 2px solid #d0d0d0; border-radius: 4px;">
+						        <button style="margin-top: 10px; padding: 10px 20px; border: 2px solid #d0d0d0; background: #f5f5f5; border-radius: 4px;">
+						          Button with low contrast
+						        </button>
+						      </div>
+						    </div>
+						    
+						    <div class="wcag-demo-half wcag-demo-good">
+						      <h5>✅ Good: 3:1 Contrast</h5>
+						      <div style="padding: 15px; background: #f5f5f5; border-radius: 4px;">
+						        <input type="text" placeholder="Input field" 
+						               style="width: 100%; padding: 8px; border: 2px solid #555; border-radius: 4px;">
+						        <button style="margin-top: 10px; padding: 10px 20px; border: 2px solid #007bff; background: white; border-radius: 4px;">
+						          Button with high contrast
+						        </button>
+						      </div>
+						    </div>
+						  </div>
+						</div> -->
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Text Spacing - AA (1.4.12)</h4>
+						<ul>
+							<li>stay readable/usable</li>
+							<ul>
+								<li>Line height: 1.5× font size</li>
+								<li>Paragraph spacing: 2× font size  </li>
+								<li>Letter spacing: 0.12× font size</li>
+								<li>Word spacing: 0.16× font size</li>
+							</ul>
+						</ul>
+						<!-- <img src="images/text-spacing-example.png" alt=""> -->
+						<div class="wcag-demo fragment">
+						  <div style="margin-bottom: 15px;">
+						    <label class="smalltext">
+						      <input type="checkbox" id="text-spacing-toggle" onchange="toggleTextSpacing()">
+						      Apply WCAG text spacing adjustments
+						    </label>
+						  </div>
+						  
+						  <div style="margin-bottom: 20px;">
+						    <h5 class="mediumtext" style="color: #dc3545;">❌ Bad: Breaks with spacing</h5>
+						    <div class="wcag-text-container wcag-text-bad">
+						      <p id="text-bad" style="font-size: 14px;">
+						        This text is in a fixed-height container. When spacing adjustments are applied, the content gets cut off at the bottom and becomes unreadable. Users lose access to important information because the container cannot expand to fit the adjusted spacing requirements. This demonstrates a failure to meet WCAG 1.4.12.
+						      </p>
+						    </div>
+						    <p style="text-align: center; margin-top: 5px;">Fixed dimensions - content gets cut off ✂️</p>
+						  </div>
+						  
+						  <div>
+						    <h5 class="mediumtext" style="color: #28a745;">✅ Good: Adapts to spacing</h5>
+						    <div class="wcag-text-container wcag-text-good">
+						      <p id="text-good" style="font-size: 14px;">
+						        This text is in a flexible container with scrolling enabled. When spacing adjustments are applied, all content remains accessible and readable. Users can scroll to see everything without losing any information. This demonstrates proper implementation of WCAG 1.4.12 text spacing requirements.
+						      </p>
+						    </div>
+						    <p style="text-align: center; margin-top: 5px;">Fixed dimensions with scroll - all content accessible ✓</p>
+						  </div>
+						</div>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Focus</h3>
+						<ul>
+							<li class="fragment">Focus Appearance - AAA (2.4.13)</li>
+							<ul>
+								<li class="fragment">minimum size and contrast requirements</li>
+							</ul>
+							<li class="fragment">Focus Not Obscured (Minimum) - AA (2.4.11)</li>
+							<ul>
+								<li class="fragment">partially hidden is allowed</li>
+							</ul>
+							<li class="fragment">Focus Not Obscured (Enhanced) - AAA (2.4.12)</li>
+							<ul>
+								<li class="fragment">nothing hidden</li>
+							</ul>
+						</ul>
+						<div class="img-group fragment">
+							<img src="images/scroll-padding-bad.png" alt="">
+							<img src="images/scroll-padding-good.png" alt="">
+						</div>
+						<!-- <div class="wcag-demo">
+						  <div class="wcag-demo-container">
+						    <div class="wcag-demo-half wcag-demo-bad">
+						      <h5>❌ Focus Obscured by Sticky Header</h5>
+						      <div class="wcag-scroll-container">
+						        <div class="wcag-sticky-header wcag-sticky-header-bad">
+						          Sticky Header (obscures focus)
+						        </div>
+						        <div class="wcag-scroll-content">
+						          <button class="wcag-focus-button">
+						            Button 1 (focus gets hidden)
+						          </button>
+						          <button class="wcag-focus-button">
+						            Button 2
+						          </button>
+						          <button class="wcag-focus-button">
+						            Button 3
+						          </button>
+						        </div>
+						      </div>
+						      <p>Tab through buttons - focus gets hidden under header</p>
+						    </div>
+						    
+						    <div class="wcag-demo-half wcag-demo-good">
+						      <h5>✅ Focus Always Visible (scroll-padding)</h5>
+						      <div class="wcag-scroll-container wcag-scroll-container-good">
+						        <div class="wcag-sticky-header wcag-sticky-header-good">
+						          Sticky Header (with scroll-padding)
+						        </div>
+						        <div class="wcag-scroll-content">
+						          <button class="wcag-focus-button wcag-focus-button-elevated">
+						            Button 1 (focus stays visible)
+						          </button>
+						          <button class="wcag-focus-button wcag-focus-button-elevated">
+						            Button 2
+						          </button>
+						          <button class="wcag-focus-button wcag-focus-button-elevated">
+						            Button 3
+						          </button>
+						        </div>
+						      </div>
+						      <p>Tab through buttons - focus always visible below header</p>
+						    </div>
+						  </div>
+						  
+						  <div class="wcag-note">
+						    <strong>Solution:</strong> Add <code>scroll-padding-top: 48px;</code> to the scrollable container (matching sticky header height)
+						  </div>
+						</div> -->
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Content on Hover or Focus - AA (1.4.13)</h4>
+						<ul>
+							<li class="fragment"><em>Dismissible</em>: can be closed without moving pointer/focus (usually ESC key)</li>
+							<li class="fragment"><em>Hoverable</em>: pointer can move over the new content without it disappearing</li>
+							<li class="fragment"><em>Persistent</em>: stays visible until dismissed or no longer valid</li>
+						</ul>
+						<!-- <img class="fragment" src="images/tooltip-hover-example.png" alt=""> -->
+						<div class="wcag-demo fragment">
+						  <div class="wcag-demo-container">
+						    <!-- Bad Example -->
+						    <div class="wcag-demo-half wcag-demo-bad">
+						      <h5>❌ Not Hoverable</h5>
+						      <div class="wcag-tooltip-wrapper">
+						        <button class="wcag-button" style="background: #ddd;" 
+						                onmouseenter="showTooltip('bad-tooltip')" 
+						                onmouseleave="hideTooltip('bad-tooltip')">
+						          ⓘ Hover for info
+						        </button>
+						        <div id="bad-tooltip" class="wcag-tooltip" style="width: 200px; pointer-events: none;">
+						          This tooltip disappears when you try to hover over it
+						        </div>
+						      </div>
+						    </div>
+						    
+						    <!-- Good Example -->
+						    <div class="wcag-demo-half wcag-demo-good">
+						      <h5>✅ Dismissible, Hoverable, Persistent</h5>
+						      <div class="wcag-tooltip-wrapper">
+						        <button class="wcag-button" style="background: #d4edda;" 
+						                onmouseenter="showTooltip('good-tooltip')" 
+						                onfocus="showTooltip('good-tooltip')">
+						          ⓘ Hover for info
+						        </button>
+						        <div id="good-tooltip" class="wcag-tooltip" style="width: 280px;"
+						             onmouseenter="keepTooltipOpen('good-tooltip')"
+						             onmouseleave="hideTooltip('good-tooltip')">
+						          <button class="wcag-tooltip-close" onclick="dismissTooltip('good-tooltip')" aria-label="Close">×</button>
+						          You can hover over this tooltip! Press ESC or click × to dismiss.
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h3>Animation</h3>
+					<ul>
+						<li>Animation from Interactions - AAA (2.3.3)</li>
+					</ul>
+
+					<aside class="notes">
+						<p></p>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Input and pointer interactions</h2>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3>Keyboard and input accessibility</h3>
+						<ul>
+							<li class="fragment">Character Key Shortcuts - A (2.1.4)</li>
+							<ul>
+								<li class="fragment">don't conflict; single-key off/remap option</li>
+							</ul>
+							<li class="fragment">Concurrent Input Mechanisms - AAA (2.5.6)</li>
+							<ul>
+								<li class="fragment">allow multiple inputs</li>
+							</ul>
+							<li class="fragment">Label in Name - A (2.5.3)</li>
+							<ul>
+								<li class="fragment">programmatic name has label text</li>
+							</ul>
+						<img class="fragment" src="images/label-in-name-example.png" alt="">
+						<!-- <div class="wcag-demo fragment">
+						  <div class="wcag-demo-container">
+						    <div class="wcag-demo-half wcag-demo-bad">
+						      <h5>❌ Mismatch</h5>
+						      <button class="wcag-button" style="background: #dc3545; color: white;" aria-label="Submit form">
+						        Send
+						      </button>
+						      <p>
+						        Voice control says "Submit form" <br>but button shows "Send"
+						      </p>
+						    </div>
+						    
+						    <div class="wcag-demo-half wcag-demo-good">
+						      <h5>✅ Match</h5>
+						      <button class="wcag-button" style="background: #28a745; color: white;">
+						        Send Message
+						      </button>
+						      <p>
+						        Visible text matches programmatic name
+						      </p>
+						    </div>
+						  </div>
+						</div> -->
+						</ul>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Touch and pointer interaction</h3>
+
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h4>Target size</h4>
+						<ul>
+							<li>Target Size (Minimum) - AA (2.5.8)</li>
+							<ul>
+								<li>24x24 px or 24px diameter spacing</li>
+							</ul>
+							<li>Target Size (Enhanced) - AAA (2.5.5)</li>
+							<ul>
+								<li>44x44 px</li>
+							</ul>
+						</ul>
+						<img src="images/target-size-example.png" alt="">
+						<!-- <div class="wcag-demo">
+						  <div class="wcag-demo-container">
+						    <div class="wcag-demo-half wcag-demo-bad">
+						      <h5>❌ Too Small (16×16px)</h5>
+						      <button class="wcag-button wcag-button-primary wcag-button-small">+</button>
+						      <button class="wcag-button wcag-button-primary wcag-button-small">×</button>
+						      <button class="wcag-button wcag-button-primary wcag-button-small">−</button>
+						      <p>Hard to tap accurately</p>
+						    </div>
+						    
+						    <div class="wcag-demo-half wcag-demo-good">
+						      <h5>✅ AAA: 44×44px</h5>
+						      <button class="wcag-button wcag-button-primary wcag-button-large">+</button>
+						      <button class="wcag-button wcag-button-primary wcag-button-large">×</button>
+						      <button class="wcag-button wcag-button-primary wcag-button-large">−</button>
+						      <p>Easy to tap on any device</p>
+						    </div>
+						  </div>
+						  
+						  <div class="wcag-demo-half wcag-demo-good" style="max-width: 500px; margin: 0 auto;">
+						    <h5>✅ AA: 24×24px with spacing</h5>
+						    <div style="text-align: center;">
+						      <button class="wcag-button wcag-button-primary wcag-button-medium">+</button>
+						      <button class="wcag-button wcag-button-primary wcag-button-medium">×</button>
+						      <button class="wcag-button wcag-button-primary wcag-button-medium">−</button>
+						    </div>
+						    <p>24px spacing between centers</p>
+						  </div>
+						</div>-->
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Pointer Cancellation - A (2.5.2)</h4>
+						<ul>
+							<li class="fragment">down-event not used</li>
+							<li class="fragment">up-event and allow undo</li>
+							<li class="fragment">up reversal</li>
+							<li class="fragment">essential</li>
+						</ul>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Dragging Movements - AA (2.5.7)</h4>
+						<ul>
+							<li>single-pointer alternative</li>
+						</ul>
+						<!-- <img src="images/dragging-movement-example.png" alt=""> -->
+						<div class="wcag-demo">
+						  <div class="wcag-demo-container">
+						    <!-- Bad Example -->
+						    <div class="wcag-demo-half wcag-demo-bad">
+						      <h5>❌ Drag-only reordering</h5>
+						      <div id="drag-only-list">
+						        <div class="wcag-drag-item" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)">
+						          ⋮⋮ Item A (drag only)
+						        </div>
+						        <div class="wcag-drag-item" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)">
+						          ⋮⋮ Item B (drag only)
+						        </div>
+						        <div class="wcag-drag-item" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)">
+						          ⋮⋮ Item C (drag only)
+						        </div>
+						      </div>
+						    </div>
+						    
+						    <!-- Good Example -->
+						    <div class="wcag-demo-half wcag-demo-good">
+						      <h5>✅ Buttons as alternative</h5>
+						      <div id="reorderable-list">
+						        <div class="wcag-list-item">
+						          <div class="wcag-list-controls">
+						            <button onclick="moveItemUp(0)" disabled aria-label="Move Item 1 up">▲</button>
+						            <button onclick="moveItemDown(0)" aria-label="Move Item 1 down">▼</button>
+						          </div>
+						          <div class="wcag-list-content">Item 1</div>
+						        </div>
+						        <div class="wcag-list-item">
+						          <div class="wcag-list-controls">
+						            <button onclick="moveItemUp(1)" aria-label="Move Item 2 up">▲</button>
+						            <button onclick="moveItemDown(1)" aria-label="Move Item 2 down">▼</button>
+						          </div>
+						          <div class="wcag-list-content">Item 2</div>
+						        </div>
+						        <div class="wcag-list-item">
+						          <div class="wcag-list-controls">
+						            <button onclick="moveItemUp(2)" aria-label="Move Item 3 up">▲</button>
+						            <button onclick="moveItemDown(2)" disabled aria-label="Move Item 3 down">▼</button>
+						          </div>
+						          <div class="wcag-list-content">Item 3</div>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Gesture accessibility</h4>
+						<ul>
+							<li class="fragment">Motion Actuation - A (2.5.4)</li>
+							<ul>
+								<li class="fragment">alternative & disable option</li>
+							</ul>
+							<li class="fragment">Pointer Gestures - A (2.5.1)</li>
+							<ul>
+								<li class="fragment">provide simple alternatives</li>
+							</ul>
+						</ul>
+						<img class="fragment" src="images/pointer-gestures-example.png" alt="">
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Site content</h2>
+
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h3>Consistent navigation</h3>
+						<ul>
+							<li>Consistent Help - A (3.2.6)</li>
+						</ul>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Forms and input fields</h3>
+
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h4>Identify purpose</h4>
+						<ul>
+							<li class="fragment">Identify Input Purpose - AA (1.3.5)</li>
+							<ul>
+								<li class="fragment">autocomplete</li>
+							</ul>
+								<pre class="fragment"><code data-trim class="html">
+<label for="user-phone">Phone Number</label>
+<input type="tel" id="user-phone" autocomplete="tel">
+								</code></pre>
+							<li class="fragment">Identify Purpose - AAA (1.3.6)</li>
+							<ul>
+								<li class="fragment">for all user interface components, icons, and regions</li>
+							</ul>
+						</ul>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Redundant Entry - A (3.3.7)</h4>
+						<!-- <img src="images/redundant-entry-example.png" alt=""> -->
+						<div class="wcag-demo">
+						  <div class="wcag-demo-good" style="max-width: 600px; margin: 0 auto; padding: 20px;">
+						    <div style="border: 2px solid #ddd; padding: 15px; border-radius: 4px; margin-bottom: 15px;">
+						      <p style="margin-top: 0;">Shipping Address</p>
+						      <input type="text" placeholder="Full Name" class="wcag-input" autocomplete="shipping name">
+						      <input type="text" placeholder="Address" class="wcag-input" autocomplete="shipping address-line1">
+						      <input type="text" placeholder="Postal Code" class="wcag-input" autocomplete="shipping postal-code">
+						    </div>
+						    
+						    <div style="border: 2px solid #ddd; padding: 15px; border-radius: 4px;">
+						      <p style="margin-top: 0;">Billing Address</p>
+						      <label style="display: block; margin-bottom: 10px; font-size: 0.7em;">
+						        <input type="checkbox" class="wcag-checkbox" onchange="toggleBillingAddress(this)">
+						        Same as shipping address
+						      </label>
+						      <div id="billing-fields">
+						        <input type="text" placeholder="Full Name" class="wcag-input" autocomplete="billing name">
+						        <input type="text" placeholder="Address" class="wcag-input" autocomplete="billing address-line1">
+						        <input type="text" placeholder="Postal Code" class="wcag-input" autocomplete="billing postal-code">
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Authentication</h4>
+						<ul>
+							<li class="fragment">Accessible Authentication (Enhanced) - AAA (3.3.9)</li>
+							<ul>
+								<li class="fragment"><em>alternative</em> non-cft authentication method</li>
+								<li class="fragment"><em>mechanism</em> to assist</li>
+							</ul>
+							<img class="fragment" style="height: 30vh;" src="images/auth-multiple-example.png" alt="">
+							<!-- <div class="wcag-demo">
+							  <div class="wcag-demo-good" style="max-width: 500px; margin: 0 auto; padding: 20px;">
+							    <h5>✅ Multiple Authentication Options</h5>
+							    
+							    <label class="wcag-label" for="demo-email">Email:</label>
+							    <input type="email" id="demo-email" class="wcag-input" autocomplete="email">
+							    
+							    <label class="wcag-label" for="demo-password">Password:</label>
+							    <div class="wcag-password-wrapper">
+							      <input type="password" id="demo-password" class="wcag-input" autocomplete="current-password">
+							      <button class="wcag-password-toggle" onclick="togglePassword('demo-password', this)" aria-label="Show password">
+							        👁️
+							      </button>
+							    </div>
+							    
+							    <button class="wcag-button wcag-button-primary" style="width: 100%; margin-top: 10px;">Sign In</button>
+							    <button class="wcag-button" style="width: 100%; background: #6c757d; color: white;">Email Me a Sign-in Link</button>
+							    <button class="wcag-button" style="width: 100%; background: #6c757d; color: white;">Use Biometric</button>
+							    
+							    <div class="wcag-note">
+							      Provides alternatives to cognitive function tests (WCAG 3.3.8)
+							    </div>
+							  </div>
+							</div> -->
+							<li class="fragment">Accessible Authentication (Minimum) - AA (3.3.8)</li>
+							<ul>
+								<li class="fragment"><em>object recognition</em></li>
+								<li class="fragment">non-text <em>personal content</em></li>
+							</ul>
+						</ul>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Status messages - AA (4.1.3)</h4>
+						<!-- <img src="images/banner-message-example.png" alt=""> -->
+						<div class="wcag-demo">
+						  <div class="wcag-demo-good" style="max-width: 500px; margin: 0 auto; padding: 20px;">
+						    <!-- Status message container with aria-live -->
+						    <div id="status-container" aria-live="polite" aria-atomic="true"></div>
+						    
+						    <button class="wcag-button" style="background: #28a745; color: white; width: 100%;" 
+						            onclick="showStatus('Your changes have been saved successfully.', 'success')">
+						      ✓ Trigger Success Message
+						    </button>
+						    
+						    <button class="wcag-button" style="background: #dc3545; color: white; width: 100%;" 
+						            onclick="showStatus('Please correct the errors in the form.', 'error')">
+						      ✗ Trigger Error Message
+						    </button>
+						    
+						    <button class="wcag-button" style="background: #17a2b8; color: white; width: 100%;" 
+						            onclick="showStatus('Processing your request...', 'info')">
+						      ℹ Trigger Info Message
+						    </button>
+						    
+						    <div class="wcag-note">
+						      Uses <code>aria-live="polite"</code>
+						    </div>
+						  </div>
+						</div>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+					<section>
+						<h4>Timeouts - AAA (2.2.6)</h4>
+						<ul>
+							<li>show time left before session expiry</li>
+						</ul>
+						<!-- <img src="images/session-timeout-example.png" alt=""> -->
+						<div class="wcag-demo">
+						  <div class="wcag-demo-good" style="max-width: 600px; margin: 0 auto; padding: 20px;">
+						    <button class="wcag-button wcag-button-primary" onclick="showTimeoutWarning()">
+						      Simulate Session Timeout Warning
+						    </button>
+						    
+						    <div id="timeout-warning" style="display: none; background: #fff3cd; border: 2px solid #ffc107; padding: 20px; border-radius: 4px; margin-top: 15px;" role="alert" aria-live="polite">
+						      <h5 style="margin-top: 0;">⚠️ Session Timeout Warning</h5>
+						      <p>Your session will expire in <strong><span id="countdown">5:00</span></strong> minutes due to inactivity.</p>
+						      <button class="wcag-button wcag-button-primary" onclick="hideTimeoutWarning()">Extend Session</button>
+						      <button class="wcag-button" style="background: #6c757d; color: white;" onclick="hideTimeoutWarning()">Save and Logout</button>
+						    </div>						    
+						  </div>
+						</div>
+
+						<aside class="notes">
+							<p></p>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Testing and validation</h2>
+					<ul>
+						<li class="fragment">Automated Testing (covers 20-60%)<br>
+							<cite>Source: Deque, The Automated Accessibility Coverage Report. <a href="https://www.deque.com/automated-accessibility-testing-coverage/">https://www.deque.com/automated-accessibility-testing-coverage/</a></cite>
+						</li>
+						<ul>
+							<li class="fragment">Example: axe, WAVE, Lighthouse</li>
+						</ul>
+						<li class="fragment">Browser/Design Tools</li>
+						<ul>
+							<li class="fragment">accessibility panel, responsive design mode</li>
+						</ul>
+						<li class="fragment">Manual Testing</li>
+						<ul>
+							<li class="fragment">screen readers, keyboard-only</li>
+						</ul>
+					</ul>
+
+					<aside class="notes">
+						<p></p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Take Away</h2>
+					<blockquote class="fragment">&ldquo;WCAG covers a wide range of recommendations for making web content more accessible, [and f]ollowing these guidelines will also often make web content more usable to users in general.&rdquo;<p class="quoted">- <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2 : Abstract</a></p></blockquote>
+
+					<aside class="notes">
+						<p></p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<div class="contact">
+						<img src="images/guups.jpg" alt="">
+						<ul>
+							<li>Cynthia "Arty" Ng</li>
+							<li><a href="https://mastodon.social/@artychan">artychan@mastodon.social</a></li>
+							<li><a href="https://bsky.app/profile/arty-chan.bsky.social">arty-chan@bsky.social</a></li>
+							<li><a href="http://about.me/cynthiang">about.me/cynthiang</a></li>
+						</ul>
+					</div>
+
+					<aside class="notes">
+						<p>Thank you. Questions?</p>
+					</aside>
+				</section>
+
+			</div>
+		</div>
+	</body>
+</html>
